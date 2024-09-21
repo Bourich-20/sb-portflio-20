@@ -42,6 +42,7 @@ export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
           alt={showIcons ? 'Close' : 'Phone'}
           width={showIcons ? 40 : 100} 
           height={showIcons ? 40 : 100} 
+          unoptimized 
         />
       </button>
       
