@@ -19,7 +19,7 @@ import springBootIcon from "../images/icon/icons8-spring-boot-48.png";
 import ionicIcon from "../images/icon/icons8-ionic-48.png";
 import nodeJsIcon from '../images/node.png'
 import reactIcon from '../images/reactIcon.jpeg'
-import nestIcon from '../images/nestJs.png'; // Icône pour Nest
+import nestIcon from '../images/nestJs.png'; 
 import { useTranslation } from 'react-i18next';
 
 interface Icon {
@@ -80,7 +80,7 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   return (
     <div
       className={`relative w-full ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} p-0 overflow-x-auto`}
-      style={{ overflowY: 'hidden' }} // Added to hide vertical scroll if it appears
+      style={{ overflowY: 'hidden' }}
     >
       <div
         className={`absolute top-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-pink-800 text-white' : "bg-pink-100 text-black"} rounded-b-lg`}
@@ -91,7 +91,7 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         className="flex items-center mt-0"
         animate={controls}
         initial={{ x: "0%" }}
-        style={{ whiteSpace: 'nowrap' }} // Ensures horizontal scroll
+        style={{ whiteSpace: 'nowrap' }}
       >
         {icons.map((icon, index) => (
           <motion.div

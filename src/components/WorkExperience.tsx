@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
-import codingArtIcon from '../images/codingArt.jpeg'; // Icône pour CodingArt
-import diamotechIcon from '../images/diamonteck.jpeg'; // Icône pour Diamotech
-import freelanceIcon from '../images/freelance.png'; // Icône pour Freelance
-import springIcon from '../images/icon/icons8-spring-boot-48.png'; // Icône pour Spring
-import nestIcon from '../images/nestJs.png'; // Icône pour Nest
-import angularIcon from '../images/icon/icons8-angular-48.png'; // Icône pour Angular
-import ionicIcon from '../images/icon/icons8-ionic-48.png'; // Icône pour Ionic
-import nodejsIcon from '../images/node.png'; // Icône pour Node.js
-import flutterIcon from '../images/icon/icons8-flutter-48.png'; // Icône pour Flutter
+import codingArtIcon from '../images/codingArt.jpeg'; 
+import diamotechIcon from '../images/diamonteck.jpeg'; 
+import freelanceIcon from '../images/freelance.png'; 
+import springIcon from '../images/icon/icons8-spring-boot-48.png'; 
+import nestIcon from '../images/nestJs.png'; 
+import angularIcon from '../images/icon/icons8-angular-48.png'; 
+import ionicIcon from '../images/icon/icons8-ionic-48.png'; 
+import nodejsIcon from '../images/node.png'; 
+import flutterIcon from '../images/icon/icons8-flutter-48.png'; 
 
 const workExperienceData = [
   {
@@ -89,7 +89,6 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
           >
-            {/* Left Section with Icon and Company Info */}
             <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 mb-6 lg:mb-0">
               <Image src={exp.icon} alt={exp.company} width={80} height={80} className="rounded-full mb-4" />
               <p className={`text-xl font-semibold ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.company}</p>
@@ -97,7 +96,6 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
               <p className={`text-lg ${isDarkMode ? 'text-gray-400' : 'text-gray-700'}`}>{exp.period}</p>
             </div>
 
-            {/* Middle Section with Details */}
             <div className="flex-1 p-4">
               <h3 className={`text-3xl font-semibold mb-4 ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.title}</h3>
               <ul className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>

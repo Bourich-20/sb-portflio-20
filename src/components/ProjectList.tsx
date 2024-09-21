@@ -44,14 +44,14 @@ type CardType = 'web' | 'desktop' | 'mobile';
 
 const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const [selectedCategory, setSelectedCategory] = useState<'entreprise' | 'freelance' | 'etudes'>('etudes');
-  const [selectedImages, setSelectedImages] = useState<StaticImageData[] | null>(null); // État pour les images sélectionnées
-  const [isModalOpen, setIsModalOpen] = useState(false); // État pour ouvrir/fermer la modale
+  const [selectedImages, setSelectedImages] = useState<StaticImageData[] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const { t } = useTranslation(); 
   const projects = {
     entreprise: [
       {
         imageSrc: [todolist],
-        projectName: t('projectName1'),  // Translation corrected
+        projectName: t('projectName1'),  
         periodMonths: 3,
         cardType: 'mobile' as CardType,
         githubLink: null,
@@ -179,14 +179,14 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
   const handlecloseModal = () => {
     setIsModalOpen(false);
-    setSelectedImages(null); // Réinitialiser les images
+    setSelectedImages(null); 
   };
   
   const categoryStyles = 'text-gray-600 text-lg cursor-pointer hover:text-orange-500 transition duration-300';
-  const activeCategoryStyles = 'text-orange-500 font-bold'; // Styles pour le bouton actif
+  const activeCategoryStyles = 'text-orange-500 font-bold'; 
 
   const handleCardClick = (images: StaticImageData[]) => {
-    setSelectedImages(images); // Définir les images sélectionnées
+    setSelectedImages(images);
     setIsModalOpen(true);   
    
 
@@ -212,7 +212,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             className={`${categoryStyles} ${selectedCategory === category ? activeCategoryStyles : ''}`}
             onClick={() => setSelectedCategory(category as 'entreprise' | 'freelance' | 'etudes')}
           >
-            {t(`${category}`)} {/* Modifié ici */}
+            {t(`${category}`)} 
             {index < 2 && <span className="mx-2">/</span>}
           </motion.span>
         ))}
@@ -251,7 +251,6 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         </div>
       </motion.div>
 
-      {/* Modale Galerie */}
       {
 isModalOpen && selectedImages && (
         <ModalGallery images={selectedImages} onClose={()=> handlecloseModal()} isDarkMode={isDarkMode}  />

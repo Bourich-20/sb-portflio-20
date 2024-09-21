@@ -14,7 +14,7 @@ interface ProjectCardProps {
   appLink?: string | null;
   techIcons: { src: StaticImageData; name: string }[];
   onClick: () => void;
-  isDarkMode: boolean; // New prop
+  isDarkMode: boolean; 
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -26,13 +26,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   appLink,
   techIcons,
   onClick,
-  isDarkMode, // Use the new prop
+  isDarkMode, 
 }) => {
   const [notification, setNotification] = useState<string | null>(null);
   const [notificationType, setNotificationType] = useState<'success' | 'error'>('error');
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
 
   useEffect(() => {
     if (notification) {

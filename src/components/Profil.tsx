@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { FaArrowCircleDown } from 'react-icons/fa';
 import { GoProject } from 'react-icons/go';
 import { useTranslation } from 'react-i18next';
-import CVViewer from './CVViewer'; // Assurez-vous que le chemin est correct
+import CVViewer from './CVViewer'; 
 
 const Typewriter: React.FC<{ text: string; isFirstRender: boolean }> = ({ text, isFirstRender }) => {
   const [displayText, setDisplayText] = useState('');
@@ -59,7 +59,6 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     slidesToScroll: 1,
   };
 
-  const pulsatingEffect = { scale: [1, 1.05, 1] };
 
   useEffect(() => {
     setIsFirstRender(false);

@@ -3,8 +3,8 @@ import { FaTimes } from 'react-icons/fa';
 
 interface NotificationProps {
   message: string;
-  type: 'success' | 'error'; // Define types for notifications
-  onClose: () => void; // Prop to handle closing the notification
+  type: 'success' | 'error'; 
+  onClose: () => void; 
 }
 
 const Notification: React.FC<NotificationProps> = ({ message, type, onClose }) => {
