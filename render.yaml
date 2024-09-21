@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sb-portfolio
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 18 # ou la version que vous utilisez
+    autoDeploy: true
