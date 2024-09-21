@@ -3,14 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+    --color-day-bg: #ffffff;
+    --color-day-border: #d1d5db;
+    --color-day-text: #4b5563;
+    --color-day-highlight: #ff6600;
+    --color-night-bg: #1f2937;
+    --color-night-border: #374151;
+    --color-night-text: #e5e7eb;
+    --color-night-highlight: #ff5e99;
+  }
+  
+  [data-theme='dark'] {
+    background-color: var(--color-night-bg);
+    color: var(--color-night-text);
+  }
+  
+  [data-theme='light'] {
+    background-color: var(--color-day-bg);
+    color: var(--color-day-text);
+  }
+  
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #60a5fa; /* Ajuster les couleurs pour le mode sombre si nécessaire */
+    --secondary: #fbbf24;
   }
 }
 
@@ -24,4 +42,37 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .text-secondary {
+    color: var(--secondary);
+  }
+}
+
+/* CSS pour la lumière en rotation */
+@keyframes lightRotation {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.animate-light-rotation {
+  animation: lightRotation 3s infinite;
 }

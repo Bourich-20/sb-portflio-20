@@ -1,0 +1,45 @@
+{
+  "profile": "Profile",
+  "projects": "Projects",
+  "about": "About",
+  "interest": "Interest",
+  "education": "Education",
+  "language": "Language",
+  "french": "French",
+  "english": "English",
+  "welcome_text": "👋 Hi, Welcome There!",
+  "short_description": "I'm a Full Stack Developer focused on delivering high-performance, secure, and rapid solutions for web, mobile, and desktop applications. I specialize in database security, API integration, and leveraging AI technologies to enhance user experiences.",
+  "view_cv": "VIEW CV",
+  "view_linkedin": "VIEW LinkedIn",
+  "Tech" : " Used technologies ",
+  "Projects": "Projects",
+  "entreprise": "Enterprise",
+  "freelance": "Freelance",
+  "etudes": "Academic",
+  "projectTitles": {
+    "entreprise": "Enterprise Projects",
+    "freelance": "Freelance Projects",
+    "etudes": "Study Projects"
+
+  },
+  "projectName1": "Task Management for Company Employees",
+  "projectName2": "Arqaam Website in the Enterprise",
+  "projectName3": "EMG mobile application for doctors and all patients",
+  "projectName4":"Real-time mobile application for tracking garbage trucks",
+  "projectName5":"Freelance Website \"Aji Stagi\"",
+  "projectName6":"Mobile Application \"SYNDICAT\"",
+  "projectName7":"Mobile Application \"UrgentCall\"",
+  "projectName8": "Website \"GestionVols\"",
+  "projectName9": "Desktop Application Studies",
+  "education1": {
+    "title": "My Educational Journey",
+    "cycle_title": "Engineering Cycle in Computer Science",
+    "deug_title": "DEUG in Mathematics and Computer Science (SMI)",
+    "bac_title": "Baccalaureate in Physical Sciences and Chemistry (SPC)",
+    "fsts": "Faculty of Science and Technology - Settat",
+    "fpo": "Polytechnic Faculty - Ouarzazate",
+    "high_school": "High School"
+  },
+  "cv_pdf" : "/pdf-cv/cv-en.pdf",
+  "cv_title": "CV in English"
+}

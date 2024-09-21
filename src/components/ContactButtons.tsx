@@ -1,0 +1,76 @@
+"use client";
+
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image'; // Utilisez Image si vous êtes dans un projet Next.js
+import githubLight from '../images/github.png'; // Image GitHub pour le mode clair
+import githubDark from '../images/gitHub-nuit.png'; // Image GitHub pour le mode sombre
+import linkedin from '../images/linkedin.png';
+import twitter from '../images/twitterx.png';
+import instagram from '../images/instagram.png';
+import gmail from '../images/gmail.png';
+import phoneGif from '../images/phone.gif'; // Ajoutez le GIF du téléphone ici
+import closeIcon from '../images/close.png'; // Assurez-vous d'avoir une image pour l'icône de fermeture
+
+interface ContactButtonsProps {
+  isDarkMode: boolean; // Prop pour le mode sombre
+}
+
+const iconList = [
+  { component: githubLight, darkComponent: githubDark, name: 'GitHub', href: 'https://github.com/Bourich-20' },
+  { component: linkedin, darkComponent: linkedin, name: 'LinkedIn', href: 'https://www.linkedin.com/in/soufiane-bourich-3a0091248' },
+  { component: twitter, darkComponent: twitter, name: 'Twitter', href: '#' },
+  { component: instagram, darkComponent: instagram, name: 'Instagram', href: 'https://www.instagram.com/soufiane_bourich_2' },
+  { component: gmail, darkComponent: gmail, name: 'Email', href: 'mailto:soufianbourich20@gmail.com' },
+];
+
+export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
+  const [showIcons, setShowIcons] = useState(false); // État pour afficher ou masquer les icônes
+
+  const toggleIcons = () => {
+    setShowIcons(!showIcons); // Inverse l'état d'affichage des icônes
+  };
+
+  return (
+    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-4 z-50">
+      {/* Bouton pour afficher/masquer les icônes */}
+      <button
+        onClick={toggleIcons}
+        className=" text-white  rounded-full mb-4 hover:bg-blue-700 focus:outline-none"
+      >
+        <Image
+          src={showIcons ? closeIcon : phoneGif} // Affiche le GIF du téléphone ou l'icône de fermeture
+          alt={showIcons ? 'Close' : 'Phone'}
+          width={showIcons ? 40 : 100} // Largeur conditionnelle
+          height={showIcons ? 40 : 100} // Hauteur conditionnelle
+        />
+      </button>
+      
+      {/* Liste des icônes */}
+      {showIcons && (
+        <div className="flex flex-col gap-4">
+          {iconList.map((val, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              className="relative flex items-center cursor-pointer group"
+              onClick={() => window.open(val.href, '_blank')}
+            >
+              <Image 
+                src={isDarkMode ? val.darkComponent : val.component} // Changement d'image selon le mode sombre
+                alt={val.name} 
+                width={40} 
+                height={40} 
+                className="transition-transform duration-300" 
+              />
+              <span className="absolute left-14 bg-blue-600 text-white py-1 px-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap transform group-hover:translate-x-2">
+                {val.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

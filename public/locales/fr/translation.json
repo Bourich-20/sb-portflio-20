@@ -1,0 +1,45 @@
+{
+  "profile": "Profil",
+  "projects": "Projets",
+  "about": "À propos",
+  "interest": "Intérêts",
+  "education": "Éducation",
+  "language": "Langue",
+  "french": "Français",
+  "english": "English",
+  "welcome_text": "👋 Bonjour, bienvenue ici !",
+  "short_description": "Je suis un développeur Full Stack, axé sur la fourniture de solutions performantes, sécurisées et rapides pour les applications web, mobiles et de bureau. Je me spécialise dans la sécurité des bases de données, l'intégration d'API et l'utilisation des technologies d'IA pour améliorer l'expérience utilisateur.",
+  "view_cv": "CONSULTER LE CV",
+  "view_linkedin": "CONSULTER LinkedIn",
+  "Tech" : "Technologies utilisées",
+  "Projects": "Projets",
+  "entreprise": "Entreprise",
+  "freelance": "Freelance",
+  "etudes": "Académique",
+  "projectTitles": {
+    "entreprise": "Projets d'Entreprise",
+    "freelance": "Projets Freelance",
+    "etudes": "Projets d'Études"
+  },
+  "projectName1": "Gestion des tâches pour les employés de l'entreprise ",
+  "projectName2" : "Site Web Arqaam dans l'entreprise",
+  "projectName3":"Application mobile EMG pour les médecins et tous les patients",
+  "projectName4":"Application mobile en temps réel pour suivre les camions à ordures",
+  "projectName5":"Site Web Freelance \"Aji Stagi\"",
+  "projectName6": "Application mobile \"SYNDICAT\"",
+  "projectName7":"Application mobile \"UrgentCall\"",
+  "projectName8": "Site Web \"GestionVols\"",
+  "projectName9":"Application de bureau Études",
+  "education1": {
+    "title": "Mon Parcours Éducatif",
+    "cycle_title": "Cycle d'Ingénieur en Génie Informatique",
+    "deug_title": "DEUG en Mathématiques et Informatique (SMI)",
+    "bac_title": "Baccalauréat en Sciences Physiques et Chimie (SPC)",
+    "fsts": "Faculté des Sciences et Techniques - Settat",
+    "fpo": "Faculté Polydisciplinaire - Ouarzazate",
+    "high_school": "Lycée"
+  },
+  "cv_pdf" : "/pdf-cv/cv-fr.pdf",
+  "cv_title": "CV en Français"
+
+}
