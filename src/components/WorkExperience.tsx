@@ -143,21 +143,20 @@ className={`text-4xl font-extrabold mb-16 text-center transition-transform durat
   ))}
 </ul>
 
-              <div className="flex flex-wrap mt-6 ml-auto"> 
-              <div className="flex flex-wrap mt-6 ml-auto justify-end">
+   <div className="flex flex-wrap mt-6 ml-auto"> 
+  <div className="flex flex-wrap mt-6 ml-auto justify-end">
                 <Image src={developerIcon} alt="Technology" width={40} height={40} className="mr-4 mb-4" />
                 <Image src={arrowIcon} alt="Technology" width={30} height={30} className="mr-4 mb-4" />
                 {exp.technologies.map((tech, i) => (
-       <div className="relative group mr-4 mb-4 p-2 border-2 border-gray-300 rounded-md">
-       <Image key={i} src={tech.icon} alt={tech.name} width={40} height={40} />
+    <div key={i} className="relative group mr-4 mb-4 p-2 border-2 border-gray-300 rounded-md">
+       <Image  src={tech.icon} alt={tech.name} width={40} height={40} />
        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-gray-800 text-white text-sm rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
          {tech.name}
        </span>
     </div>
   ))}
-</div>
-
-              </div>
+     </div>
+ </div>
             </div>
           </motion.div>
         ))}
