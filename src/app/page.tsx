@@ -8,6 +8,7 @@ import Technologie from '../components/Technologie';
 import ProjectList from '@/components/ProjectList';
 import EducationPath from '@/components/EducationPath';
 import WorkExperience from '@/components/WorkExperience';
+import TechnologiesDisplay from '@/components/TechnologiesDisplay';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -45,6 +46,7 @@ export default function Home() {
       <ProjectList isDarkMode={isDarkMode}/>
       <EducationPath isDarkMode={isDarkMode}/>
       <WorkExperience  isDarkMode={isDarkMode}/>
+      <TechnologiesDisplay isDarkMode={isDarkMode} />
     </div>
   );
 }

@@ -6,20 +6,20 @@ import awsIcon from "../images/icon/icons8-aws-48.png";
 import cssIcon from "../images/icon/icons8-css-48.png";
 import flutterIcon from "../images/icon/icons8-flutter-48.png";
 import htmlIcon from "../images/icon/icons8-html-48.png";
-import javaIcon from "../images/icon/icons8-java-48.png";
+import javaIcon from "../images/icon/javaLogo.png";
 import laravelIcon from "../images/icon/icons8-laravel-64.png";
-import linuxIcon from "../images/icon/icons8-linux.gif";
-import phpIcon from "../images/icon/icons8-php-16.png";
+import linuxIcon from "../images/icon/linuxLogo.png";
+import phpIcon from "../images/icon/phpLogo.png";
 import swiftIcon from "../images/icon/icons8-swift-48.png";
 import mysqlIcon from "../images/icon/icons8-my-sql-48.png";
-import jsIcon from "../images/icon/icons8-java-script-100.png";
+import jsIcon from "../images/icon/jsLogo.png";
 import typescriptIcon from "../images/icon/icons8-typescript-48.png";
 import mongodbIcon from "../images/icon/icons8-mongo-db-48.png";
 import springBootIcon from "../images/icon/icons8-spring-boot-48.png";
 import ionicIcon from "../images/icon/icons8-ionic-48.png";
-import nodeJsIcon from '../images/node.png'
-import reactIcon from '../images/reactIcon.jpeg'
-import nestIcon from '../images/nestJs.png'; 
+import nodeJsIcon from '../images/icon/nodeJs.png'
+import reactIcon from '../images/icon/reactJsLogo.png'
+import nestIcon from '../images/icon/nestJsLogo.png'; 
 import { useTranslation } from 'react-i18next';
 
 interface Icon {

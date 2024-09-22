@@ -37,7 +37,7 @@ import angularIcon from '../images/icon/icons8-angular-48.png';
 import { motion } from 'framer-motion';
 import { StaticImageData } from 'next/image';
 import ModalGallery from './ModalGallery';
-import jsIcon from "../images/icon/icons8-java-script-100.png";
+import jsIcon from "../images/icon/jsLogo.png";
 
 type CardType = 'web' | 'desktop' | 'mobile';
 

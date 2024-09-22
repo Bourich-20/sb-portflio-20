@@ -9,7 +9,7 @@ import linkedin from '../images/linkedin.png';
 import twitter from '../images/twitterx.png';
 import instagram from '../images/instagram.png';
 import gmail from '../images/gmail.png';
-import phoneGif from '../images/phone.gif'; 
+import phoneGif from '../images/phone.png'; 
 import closeIcon from '../images/close.png'; 
 
 interface ContactButtonsProps {
@@ -40,8 +40,8 @@ export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
         <Image
           src={showIcons ? closeIcon : phoneGif} 
           alt={showIcons ? 'Close' : 'Phone'}
-          width={showIcons ? 40 : 100} 
-          height={showIcons ? 40 : 100} 
+          width={showIcons ? 40 : 80} 
+          height={showIcons ? 40 : 80} 
           unoptimized 
         />
       </button>

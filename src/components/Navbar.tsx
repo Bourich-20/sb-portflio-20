@@ -51,7 +51,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
     <nav className={`p-5 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/#start" className="flex items-center space-x-2 text-white">
-          <Image src={logo} alt="Logo" className="w-14 h-14" />
+          <Image src={logo} alt="Logo" className="w-16 h-14" />
           <span className="text-2xl font-bold">SOUFIANE BOURICH</span>
         </Link>
 
