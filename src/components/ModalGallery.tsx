@@ -5,7 +5,7 @@ import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 interface ModalGalleryProps {
   images: StaticImageData[];
   onClose: () => void;
-  isDarkMode: boolean | null;
+  isDarkMode: boolean;
 }
 
 const ModalGallery: React.FC<ModalGalleryProps> = ({ images, onClose, isDarkMode }) => {

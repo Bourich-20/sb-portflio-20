@@ -235,6 +235,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             {projects[selectedCategory].map((project, index) => (
               <motion.div key={index} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                 <ProjectCard
+                 key={index}
                   images={project.imageSrc}
                   projectName={project.projectName}
                   periodMonths={project.periodMonths}
