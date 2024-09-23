@@ -77,8 +77,8 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
           </button>
         </div>
 
-        <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'block fixed inset-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5' : 'hidden'}`}>
-          <ul className={`flex flex-col lg:flex-row lg:space-x-4 ${isMenuOpen ? 'mt-16' : ''}`}>
+        <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5' : 'hidden'}`}>
+          <ul className={`flex flex-col lg:flex-row lg:space-x-4`}>
             {['profile', 'projects', 'about', 'interest', 'education'].map((item) => (
               <li className="mb-2 lg:mb-0 lg:mr-4" key={item}>
                 <Link
