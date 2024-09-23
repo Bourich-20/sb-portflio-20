@@ -3,18 +3,13 @@ import { motion, useAnimation } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import angularIcon from "../images/icon/icons8-angular-48.png";
 import awsIcon from "../images/icon/icons8-aws-48.png";
-import cssIcon from "../images/icon/icons8-css-48.png";
 import flutterIcon from "../images/icon/icons8-flutter-48.png";
-import htmlIcon from "../images/icon/icons8-html-48.png";
 import javaIcon from "../images/icon/javaLogo.png";
-import laravelIcon from "../images/icon/icons8-laravel-64.png";
 import linuxIcon from "../images/icon/linuxLogo.png";
-import phpIcon from "../images/icon/phpLogo.png";
 import swiftIcon from "../images/icon/icons8-swift-48.png";
 import mysqlIcon from "../images/icon/icons8-my-sql-48.png";
 import jsIcon from "../images/icon/jsLogo.png";
 import typescriptIcon from "../images/icon/icons8-typescript-48.png";
-import mongodbIcon from "../images/icon/icons8-mongo-db-48.png";
 import springBootIcon from "../images/icon/icons8-spring-boot-48.png";
 import ionicIcon from "../images/icon/icons8-ionic-48.png";
 import nodeJsIcon from '../images/icon/nodeJs.png'
@@ -31,18 +26,13 @@ interface Icon {
 const icons: Icon[] = [
   { src: angularIcon, name: "Angular" },
   { src: awsIcon, name: "AWS" },
-  { src: cssIcon, name: "CSS" },
   { src: flutterIcon, name: "Flutter" },
-  { src: htmlIcon, name: "HTML" },
   { src: javaIcon, name: "Java" },
-  { src: laravelIcon, name: "Laravel" },
   { src: linuxIcon, name: "Linux" },
-  { src: phpIcon, name: "PHP" },
   { src: swiftIcon, name: "Swift" },
   { src: mysqlIcon, name: "MySQL" },
   { src: jsIcon, name: "JavaScript" },
   { src: typescriptIcon, name: "TypeScript" },
-  { src: mongodbIcon, name: "MongoDB" },
   { src: springBootIcon, name: "Spring Boot" },
   { src: ionicIcon, name: "Ionic" },
   {src : nodeJsIcon,name :"Node Js"},
