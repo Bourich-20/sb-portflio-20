@@ -2,10 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Icons imports
 import angularIcon from "../images/icon/icons8-angular-48.png";
 import awsIcon from "../images/icon/icons8-aws-48.png";
-import cssIcon from "../images/icon/icons8-css-48.png";
 import flutterIcon from "../images/icon/icons8-flutter-48.png";
 import htmlIcon from "../images/icon/icons8-html-48.png";
 import javaIcon from "../images/icon/javaLogo.png";
