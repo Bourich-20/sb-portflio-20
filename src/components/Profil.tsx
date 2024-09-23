@@ -91,9 +91,10 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         <Typewriter text={t('welcome_text')} isFirstRender={isFirstRender} />
 
         <div className="text-center mb-0 px-4">
-  <p className="text-lg leading-6 font-medium text-gray-700 font-serif">
+        <p className={`text-lg leading-6 font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} font-serif`}>
     {t('short_description')}
-  </p>
+</p>
+
 </div>
 
 

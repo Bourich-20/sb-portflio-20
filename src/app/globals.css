@@ -27,7 +27,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #60a5fa; /* Ajuster les couleurs pour le mode sombre si nécessaire */
+    --primary: #60a5fa; 
     --secondary: #fbbf24;
   }
 }
@@ -75,4 +75,13 @@ body {
 
 .animate-light-rotation {
   animation: lightRotation 3s infinite;
+}
+*body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
+.min-h-screen {
+  min-height: 100vh; 
 }
