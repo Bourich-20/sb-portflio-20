@@ -10,7 +10,6 @@ import javaIcon from "../images/icon/javaLogo.png";
 import laravelIcon from "../images/icon/icons8-laravel-64.png";
 import linuxIcon from "../images/icon/linuxLogo.png";
 import phpIcon from "../images/icon/phpLogo.png";
-import swiftIcon from "../images/icon/icons8-swift-48.png";
 import mysqlIcon from "../images/icon/icons8-my-sql-48.png";
 import jsIcon from "../images/icon/jsLogo.png";
 import typescriptIcon from "../images/icon/icons8-typescript-48.png";
