@@ -9,7 +9,7 @@ import linkedin from '../images/linkedin.png';
 import twitter from '../images/twitterx.png';
 import instagram from '../images/instagram.png';
 import gmail from '../images/gmail.png';
-import phoneGif from '../images/phone.png'; 
+import phoneGif from '../images/icon/phone.png'; 
 import closeIcon from '../images/close.png'; 
 
 interface ContactButtonsProps {
