@@ -26,7 +26,7 @@
   "projectName2": "Arqaam Website in the Enterprise",
   "projectName3": "EMG mobile application for doctors and all patients",
   "projectName4":"Real-time mobile application for tracking garbage trucks",
-  "projectName5":"Freelance Website \"Aji Stagi\"",
+  "projectName5":"Freelance Website -------------->\"Aji Stagi\"",
   "projectName6":"Mobile Application \"SYNDICAT\"",
   "projectName7":"Mobile Application \"UrgentCall\"",
   "projectName8": "Website \"GestionVols\"",
@@ -90,5 +90,13 @@
    "exp_title" :"Work Experience",
    "tech_use" : "Technologies Used",
    "bd" : "Databases",
-   "tools" :"Tools"
+   "tools" :"Tools",
+   "contact_us": "Contact Us",
+   "name" : "Name",
+   "email":"Email",
+   "message" : "Message",
+   "send_message": "Send Message",
+   "invalid_email": "Invalid email address",
+   "message_sent": "Message sent successfully",
+   "message_failed": "Failed to send message"
 }

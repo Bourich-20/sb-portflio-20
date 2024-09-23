@@ -43,7 +43,7 @@ type CardType = 'web' | 'desktop' | 'mobile';
 
 
 const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
-  const [selectedCategory, setSelectedCategory] = useState<'entreprise' | 'freelance' | 'etudes'>('etudes');
+  const [selectedCategory, setSelectedCategory] = useState<'entreprise' | 'freelance' | 'etudes'>('freelance');
   const [selectedImages, setSelectedImages] = useState<StaticImageData[] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const { t } = useTranslation(); 

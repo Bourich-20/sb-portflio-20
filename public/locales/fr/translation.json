@@ -25,7 +25,7 @@
   "projectName2" : "Site Web Arqaam dans l'entreprise",
   "projectName3":"Application mobile EMG pour les médecins et tous les patients",
   "projectName4":"Application mobile en temps réel pour suivre les camions à ordures",
-  "projectName5":"Site Web Freelance \"Aji Stagi\"",
+  "projectName5":"Site Web Freelance --------------> \"Aji Stagi\"",
   "projectName6": "Application mobile \"SYNDICAT\"",
   "projectName7":"Application mobile \"UrgentCall\"",
   "projectName8": "Site Web \"GestionVols\"",
@@ -89,8 +89,15 @@
  "exp_title" :"Expérience Professionnelle",
 "tech_use" : "Technologies Utilisées",
 "bd" : "Bases de données",
-"tools" :"Outils"
-
+"tools" :"Outils",
+"contact_us": "Contactez-nous",
+"name" : "Nom",
+"email":"Email",
+"message" : "Message",
+"send_message": "Envoyer le message",
+"invalid_email": "Adresse e-mail invalide",
+"message_sent": "Message envoyé avec succès",
+"message_failed": "Échec de l'envoi du message"
 }
 
 

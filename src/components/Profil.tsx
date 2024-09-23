@@ -90,11 +90,14 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
         <Typewriter text={t('welcome_text')} isFirstRender={isFirstRender} />
 
-        <div className="text-center mb-0">
-          <p className="text-base leading-5">{t('short_description')}</p>
-        </div>
+        <div className="text-center mb-0 px-4">
+  <p className="text-lg leading-6 font-medium text-gray-700 font-serif">
+    {t('short_description')}
+  </p>
+</div>
 
-        <div className="flex flex-col items-center gap-4 pt-10">
+
+        <div className="flex flex-col items-center gap-4 pt-5">
       <motion.a
         onClick={handleShowCvViewer}
         className={`bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold px-6 py-2 rounded-full shadow-lg flex items-center gap-2 hover:shadow-2xl 
