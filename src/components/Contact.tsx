@@ -61,31 +61,36 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+    
         if (!validateEmail(formData.email)) {
-            setNotification({ message: t('invalid_email'), type: 'error' }); 
+            setNotification({ message: t('invalid_email'), type: 'error' });
             return;
         }
-
-        setIsSending(true); 
-
+    
+        setIsSending(true);
+    
         const templateParams = {
             from_name: formData.name,
             to_name: 'Soufian Bourich',
             from_email: formData.email,
             message: formData.message,
         };
-
+    
         emailjs.send('service_39t7fjh', 'template_j75bwwe', templateParams, 'tgyQKOpjs_YYd6H9X')
             .then((response) => {
+                console.log('Email sent successfully:', response); 
                 setNotification({ message: t('message_sent'), type: 'success' });
-                setIsSending(false); 
                 setFormData({ name: '', email: '', message: '' });
-            }, (err) => {
+            })
+            .catch((error) => {
+                console.error('Email sending failed:', error);
                 setNotification({ message: t('message_failed'), type: 'error' });
-                setIsSending(false); 
+            })
+            .finally(() => {
+                setIsSending(false);
             });
     };
+    
 
     return (
         <div className={`flex flex-col items-center justify-center w-full min-h-[700px] px-4 pt-7 rounded-t-lg border border-gray-300 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-purple-400 text-black'}`}>
