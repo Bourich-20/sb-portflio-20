@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen pt-20 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen pt-20 mx-0  ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <ContactButtons isDarkMode={isDarkMode} />
       <Profil isDarkMode={isDarkMode} />
