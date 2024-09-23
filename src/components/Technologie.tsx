@@ -20,7 +20,8 @@ import ionicIcon from "../images/icon/icons8-ionic-48.png";
 import nodeJsIcon from '../images/icon/nodeJs.png'
 import reactIcon from '../images/icon/reactJsLogo.png'
 import nestIcon from '../images/icon/nestJsLogo.png'; 
-import { useTranslation } from 'react-i18next';
+import nextIcon from "../images/icon/nextLogo.png";
+import postgreeIcon from "../images/icon/postGreeSql.png"
 
 interface Icon {
   src: StaticImageData;
@@ -46,7 +47,9 @@ const icons: Icon[] = [
   { src: ionicIcon, name: "Ionic" },
   {src : nodeJsIcon,name :"Node Js"},
   {src : reactIcon,name :"React Js"},
-  {src : nestIcon,name :"Nest Js"}
+  {src : nestIcon,name :"Nest Js"},
+  {src : nextIcon,name :"Next Js"},
+  {src : postgreeIcon,name :"PostgreSQL"}
 
 
 ];
@@ -54,7 +57,6 @@ const icons: Icon[] = [
 const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const controls = useAnimation();
   const [isHovered, setIsHovered] = useState(false);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const startAnimation = () => {
@@ -85,7 +87,6 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       <div
         className={`absolute top-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-pink-800 text-white' : "bg-pink-100 text-black"} rounded-b-lg`}
       >
-        <h2 className="text-lg font-semibold text-center">{t('Tech')}</h2>
       </div>
       <motion.div
         className="flex items-center mt-0"

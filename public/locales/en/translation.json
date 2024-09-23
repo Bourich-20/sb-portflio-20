@@ -41,5 +41,54 @@
     "high_school": "High School"
   },
   "cv_pdf" : "/pdf-cv/cv-en.pdf",
-  "cv_title": "CV in English"
+  "cv_title": "CV in English",
+  "github_view" : "View on GitHub",
+  "application_view" :"View Application",
+  "exp1": {
+    "title": "Internship: Backend",
+    "company": "CodingArt",
+    "city": "Agadir",
+    "period": "September 1, 2024 - October 1, 2024",
+    "description": {
+      "des1": "Worked on backend development using Spring Boot, implementing Spring Security with JWT, Spring Data, and JPA.",
+      "des2": "Utilized Docker and Kubernetes for containerization and deployment.",
+      "des3": "Worked on microservices architecture with Spring Boot and NestJS."
+    }
+  },
+  "exp2": {
+    "title": "Internship: Full Stack Developer",
+    "company": "Diamotech",
+    "city": "Casablanca",
+    "period": "July 17, 2023 - September 3, 2023",
+    "description": {
+      "des1": "Developed a task management mobile app using Ionic, Angular, and Node.js.",
+      "des2": "Contributed to innovation within the company by delivering a full-stack solution."
+    }
+  },
+  "exp3": {
+    "title": "Freelance: Mobile Application",
+    "company": "Freelance",
+    "city": "Remote",
+    "period": "April 10, 2024 - May 1, 2024",
+    "description": {
+      "des1": "Developed a mobile application for biomedical engineering students using Flutter, Arduino, and Bluetooth.",
+      "des2": "Collected and displayed EMG data in real-time with Firebase integration.",
+      "des3": "Created a doctor space to manage patients and send reports."
+    }
+  },
+  "exp4": {
+    "title": "Freelance: Mobile Application",
+    "company": "Freelance",
+    "city": "Remote",
+    "period": "May 1, 2024 - May 15, 2024",
+    "description": {
+      "des1": "Developed a mobile app for embedded systems engineering students using Flutter, Arduino with Wi-Fi, and GPS.",
+      "des2": "Collected data and transferred it to the server to visualize trucks and bins in real-time on a map.",
+      "des3": "Optimized routes via server communication."
+    }
+  },
+   "exp_title" :"Work Experience",
+   "tech_use" : "Technologies Used",
+   "bd" : "Databases",
+   "tools" :"Tools"
 }

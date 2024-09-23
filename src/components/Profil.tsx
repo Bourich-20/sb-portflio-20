@@ -72,7 +72,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     setShowCvViewer(false);
   };
   return (
-    <div className={`flex flex-col lg:flex-row items-stretch justify-center w-full h-auto px-4 lg:px-8 pt-7 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+    <div className={`flex flex-col lg:flex-row items-stretch justify-center w-full h-auto px-4 lg:px-8 pt-7  ${isDarkMode ? 'bg-gray-900 text-white' : ' text-black '}`}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

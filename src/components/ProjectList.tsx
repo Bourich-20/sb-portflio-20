@@ -193,7 +193,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   };
 
   return (
-    <div className="p-6">
+    <div className={`p-6  ${ !isDarkMode ? "bg-gray-100" : "" }`} >
       <motion.h1
         className="text-4xl font-bold text-center mb-6"
         initial={{ opacity: 0, y: -50 }}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { FaGithub, FaLink, FaApple, FaGooglePlay, FaMobileAlt, FaDesktop, FaGlobe } from 'react-icons/fa';
 import Notification from './Notification';
+import { useTranslation } from 'react-i18next';
 
 type CardType = 'web' | 'desktop' | 'mobile';
 
@@ -31,6 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [notification, setNotification] = useState<string | null>(null);
   const [notificationType, setNotificationType] = useState<'success' | 'error'>('error');
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+  const { t } = useTranslation();
 
 
   useEffect(() => {
@@ -51,6 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   const handleAppLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+
     if (!appLink) {
       e.preventDefault();
       setNotificationType('error');
@@ -99,9 +102,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 hover:text-black"
             >
               <FaGithub size={24} />
-              <span>View on GitHub</span>
+              <span>{t('github_view')}</span>
             </a>
-
+            <div className="mt-2"></div>
             <a
               href={appLink || '#'}
               target="_blank"
@@ -110,7 +113,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 hover:text-black"
             >
               <FaLink size={24} />
-              <span>View Application</span>
+              <span>{t('application_view')}</span>
             </a>
 
             {appLink && appLink.includes('play.google.com') && <FaGooglePlay size={24} className="ml-2" />}
