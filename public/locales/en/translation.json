@@ -98,5 +98,7 @@
    "send_message": "Send Message",
    "invalid_email": "Invalid email address",
    "message_sent": "Message sent successfully",
-   "message_failed": "Failed to send message"
+   "message_failed": "Failed to send message",
+   "image" : "Image",
+   "sur" : "of" 
 }

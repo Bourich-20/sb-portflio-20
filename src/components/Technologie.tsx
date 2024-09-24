@@ -17,6 +17,7 @@ import reactIcon from '../images/icon/reactJsLogo.png'
 import nestIcon from '../images/icon/nestJsLogo.png'; 
 import nextIcon from "../images/icon/nextLogo.png";
 import postgreeIcon from "../images/icon/postGreeSql.png"
+import nestNuitIcon from '../images/icon/nextLogoNuit.png'; 
 
 interface Icon {
   src: StaticImageData;
@@ -39,7 +40,9 @@ const icons: Icon[] = [
   {src : reactIcon,name :"React Js"},
   {src : nestIcon,name :"Nest Js"},
   {src : nextIcon,name :"Next Js"},
-  {src : postgreeIcon,name :"PostgreSQL"}
+  {src : postgreeIcon,name :"PostgreSQL"},
+  {src : nestNuitIcon,name :"Next js"}
+
 
 
 ];
