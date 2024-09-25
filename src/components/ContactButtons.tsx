@@ -40,8 +40,8 @@ export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
         <Image
           src={showIcons ? closeIcon : phoneGif} 
           alt={showIcons ? 'Close' : 'Phone'}
-          width={showIcons ? 40 : 80} 
-          height={showIcons ? 40 : 80} 
+          width={showIcons ? 40 : 70} 
+          height={showIcons ? 40 : 70} 
           unoptimized 
         />
       </button>

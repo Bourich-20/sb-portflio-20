@@ -28,14 +28,16 @@ import call1 from '../images/call1.jpg'
 import call2 from '../images/call2.jpg'
 import call3 from '../images/call3.jpg'
 import { useTranslation } from 'react-i18next';
-
+import freelanceProjectsIcon from '../images/icon/freelance_projects.png';
+import entrepriseProjectsIcon from '../images/icon/entrprise_projects.png';
+import academicProjectsIcon from '../images/icon/academic_projects.png';
 
 
 
 import springBootIcon from '../images/icon/icons8-spring-boot-48.png';
 import angularIcon from '../images/icon/icons8-angular-48.png';
 import { motion } from 'framer-motion';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import ModalGallery from './ModalGallery';
 import jsIcon from "../images/icon/jsLogo.png";
 
@@ -193,7 +195,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   };
 
   return (
-    <div className={`p-6  ${ !isDarkMode ? "bg-gray-100" : "" }`} >
+    <div className={`p-6 ${!isDarkMode ? "bg-gray-100" : ""}`}>
       <motion.h1
         className="text-4xl font-bold text-center mb-6"
         initial={{ opacity: 0, y: -50 }}
@@ -212,6 +214,9 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             className={`${categoryStyles} ${selectedCategory === category ? activeCategoryStyles : ''}`}
             onClick={() => setSelectedCategory(category as 'entreprise' | 'freelance' | 'etudes')}
           >
+            {category === 'entreprise' && <Image src={entrepriseProjectsIcon} alt="Entreprise Projects" className="inline-block w-6 h-6 mr-2" />}
+            {category === 'freelance' && <Image src={freelanceProjectsIcon} alt="Freelance Projects" className="inline-block w-6 h-6 mr-2" />}
+            {category === 'etudes' && <Image src={academicProjectsIcon} alt="Academic Projects" className="inline-block w-6 h-6 mr-2" />}
             {t(`${category}`)} 
             {index < 2 && <span className="mx-2">/</span>}
           </motion.span>
@@ -227,24 +232,24 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         <div className="absolute inset-0 rounded-lg border-2 opacity-50 animate-pulse bg-purple-200"></div>
         <div className="relative z-10">
           <h2 className="text-2xl font-bold mb-4">
-          {selectedCategory === 'entreprise' && t('projectTitles.entreprise')}
-          {selectedCategory === 'freelance' && t('projectTitles.freelance')}
-          {selectedCategory === 'etudes' && t('projectTitles.etudes')}
+            {selectedCategory === 'entreprise' && t('projectTitles.entreprise')}
+            {selectedCategory === 'freelance' && t('projectTitles.freelance')}
+            {selectedCategory === 'etudes' && t('projectTitles.etudes')}
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
             {projects[selectedCategory].map((project, index) => (
               <motion.div key={index} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                 <ProjectCard
-               key={project.projectName}      
-               images={project.imageSrc}
+                  key={project.projectName}
+                  images={project.imageSrc}
                   projectName={project.projectName}
                   periodMonths={project.periodMonths}
                   cardType={project.cardType}
                   githubLink={project.githubLink}
                   appLink={project.appLink}
                   techIcons={project.techIcons}
-                  onClick={() => handleCardClick(project.imageSrc)} 
-                  isDarkMode={isDarkMode} 
+                  onClick={() => handleCardClick(project.imageSrc)}
+                  isDarkMode={isDarkMode}
                 />
               </motion.div>
             ))}
@@ -252,9 +257,8 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         </div>
       </motion.div>
 
-      {
-isModalOpen && selectedImages && (
-        <ModalGallery images={selectedImages} onClose={()=> handlecloseModal()} isDarkMode={isDarkMode}  />
+      {isModalOpen && selectedImages && (
+        <ModalGallery images={selectedImages} onClose={handlecloseModal} isDarkMode={isDarkMode} />
       )}
     </div>
   );

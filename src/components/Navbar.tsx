@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.png';
@@ -22,6 +22,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [selectedLang, setSelectedLang] = useState<string>('en'); 
   const [isLangMenuOpen, setIsLangMenuOpen] = useState<boolean>(false);
+  const langMenuRef = useRef<HTMLDivElement | null>(null);
 
   const handleClick = (link: string) => {
     setActiveLink(link);
@@ -46,6 +47,19 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
   useEffect(() => {
     i18n.changeLanguage(selectedLang);
   }, [selectedLang]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className={`p-5 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
@@ -92,7 +106,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
             ))}
           </ul>
 
-          <div className="relative flex items-center">
+          <div className="relative flex items-center" ref={langMenuRef}>
             <button 
               className="bg-none flex items-center text-white focus:outline-none" 
               onClick={toggleLangMenu}

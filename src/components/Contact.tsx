@@ -113,7 +113,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 </div>
                 <motion.form
                     onSubmit={handleSubmit}
-                    className={`bg-purple-300 rounded-lg shadow-lg p-6 w-full lg:w-1/2 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}
+                    className={`bg-purple-300 rounded-lg shadow-lg p-6 w-full lg:w-1/2 ${isDarkMode ? 'bg-gray-800' : 'bg-blue-100'}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}

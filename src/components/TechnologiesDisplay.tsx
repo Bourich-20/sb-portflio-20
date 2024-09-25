@@ -27,8 +27,14 @@ import postgreeIcon from "../images/icon/postGreeSql.png"
 import oracleIcon from "../images/icon/oracle.png"
 import tailwindIcon from "../images/icon/tailwindcss.png"
 import ciCdIcon from "../images/icon/CICD.png"
+import intillijIcon from "../images/icon/intelli.png"
+import anduidStudioIcon from "../images/icon/android-studio.png"
+import figmaIcon from "../images/icon/figma.png"
+import cassandraIcon  from "../images/icon/cassandra.png"
+import redisIcon from "../images/icon/redis.png"
+import fireBaseIcon from "../images/icon/fireBase.png"
+import pythonIcon from "../images/icon/python.png"
 import { useTranslation } from 'react-i18next';
-
 const frontendTechs = [
   { name: 'Angular', icon: angularIcon },
   { name: 'React Js', icon: reactIcon },
@@ -39,15 +45,18 @@ const frontendTechs = [
   { name: 'Tailwind CSS', icon: tailwindIcon },
   { name: 'Flutter', icon: flutterIcon },
   { name: 'Ionic', icon: ionicIcon },
+
 ];
 
 const backendTechs = [
   { name: 'Spring Boot', icon: springBootIcon },
   { name: 'Node.js', icon: nodeJsIcon },
   { name: 'NestJS', icon: nestIcon },
-  { name: 'Java', icon: javaIcon },
   { name: 'PHP', icon: phpIcon },
   { name: 'Laravel', icon: laravelIcon },
+  { name: 'Java', icon: javaIcon },
+  {name :" Python" ,icon : pythonIcon}
+
 ];
 
 const databaseTechs = [
@@ -55,6 +64,11 @@ const databaseTechs = [
       { name: 'Oracle Database', icon: oracleIcon },
   { name: 'MySQL', icon: mysqlIcon },
   { name: 'MongoDB', icon: mongodbIcon },
+  { name: 'Redis', icon: redisIcon },
+  {name :" Cassandra" ,icon : cassandraIcon},
+  {name :" FireBase" ,icon : fireBaseIcon}
+
+
 ];
 
 const tools = [
@@ -64,6 +78,9 @@ const tools = [
   { name: 'AWS', icon: awsIcon },
   { name: 'Linux', icon: linuxIcon },
   { name: 'CI-CD', icon: ciCdIcon },
+  {name:"IntelliJ",icon : intillijIcon},
+  {name : "Android Studio",icon : anduidStudioIcon},
+  {name : "Figma",icon : figmaIcon}
 
 
 ];
