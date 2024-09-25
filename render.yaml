@@ -7,5 +7,5 @@ services:
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
-        value: 18 # ou la version que vous utilisez
+        value: 20.15.0  
     autoDeploy: true
