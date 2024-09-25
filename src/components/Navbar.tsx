@@ -18,7 +18,7 @@ interface NavbarProps {
 
 export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
   const { t } = useTranslation();
-  const [activeLink, setActiveLink] = useState<string>('');
+  const [activeLink, setActiveLink] = useState<string>('profil');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [selectedLang, setSelectedLang] = useState<string>('en'); 
   const [isLangMenuOpen, setIsLangMenuOpen] = useState<boolean>(false);
@@ -41,7 +41,6 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
     setSelectedLang(lang);
     setIsLangMenuOpen(false);
     i18n.changeLanguage(lang);
-    console.log(`Langue changée en: ${lang}`);
   };
 
   useEffect(() => {
@@ -64,8 +63,8 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
   return (
     <nav className={`p-5 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
       <div className="container mx-auto flex items-center justify-between">
-        <Link href="/#start" className="flex items-center space-x-2 text-white">
-          <Image src={logo} alt="Logo" className="w-16 h-14" />
+        <Link href="/#profil" className="flex items-center space-x-2 text-white">
+          <Image src={logo} alt="Logo" className="w-20 h-14" />
           <span className="text-2xl font-bold">SOUFIANE BOURICH</span>
         </Link>
 
@@ -93,7 +92,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
 
         <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5' : 'hidden'}`}>
           <ul className={`flex flex-col lg:flex-row lg:space-x-4`}>
-            {['profile', 'projects', 'about', 'interest', 'education'].map((item) => (
+            {['profil', 'technologies', 'projects', 'education', 'Experience', 'contact'].map((item) => (
               <li className="mb-2 lg:mb-0 lg:mr-4" key={item}>
                 <Link
                   className={`block px-4 py-2 rounded-md text-white text-base font-medium transition-all duration-300 ${activeLink === item ? 'bg-gray-700 text-lg' : 'hover:bg-gray-700'}`}

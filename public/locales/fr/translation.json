@@ -99,7 +99,21 @@
 "message_sent": "Message envoyé avec succès",
 "message_failed": "Échec de l'envoi du message",
 "image" : "Image",
-"sur" : "sur" 
+"sur" : "sur" ,
+"footer": {
+  "description": "© 2024 Soufiane Bourich. All rights reserved. Empowering your digital experience.",
+  "rights": "Your privacy is important to us. We commit to protecting your personal information.",
+  "tagline": "Développeur Web Passionné",
+  "navigation": "Navigation",
+  "about": "À propos",
+  "projects": "Projets",
+  "contact": "Contact",
+  "contactUs": "Nous contacter"
+},
+"profil": "Profil",
+"technologies": "Technologies",
+"experience": "Expérience",
+"contact": "Contact"
 }
 
 
