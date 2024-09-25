@@ -5,15 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.png';
 
-// Importation des icônes
 import githubLight from '../images/github.png';
 import githubDark from '../images/gitHub-nuit.png';
 import linkedin from '../images/linkedin.png';
 import twitter from '../images/twitterx.png';
 import instagram from '../images/instagram.png';
 import gmail from '../images/gmail.png';
-import phoneGif from '../images/phone.png'; 
-import closeIcon from '../images/close.png'; 
+
 
 interface FooterProps {
   isDarkMode: boolean;
@@ -33,7 +31,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
   return (
     <footer className={`py-10 mt-0 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'} text-white`}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-5">
-        {/* Logo et Titre */}
         <div className="flex items-center mb-6 lg:mb-0 text-center lg:text-left">
           <Image src={logo} alt="Logo" className="w-40 h-45 mr-2" /> {/* Espace à droite du logo */}
           <div className="flex flex-col">
@@ -42,7 +39,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           </div>
         </div>
 
-        {/* Liens de navigation */}
         <nav className="flex flex-col lg:flex-row mb-6 lg:mb-0 items-center">
           <div className="flex flex-col lg:flex-row lg:space-x-10 mb-4 lg:mb-0">
             {['profil', 'technologies', 'projects', 'education', 'experience', 'contact'].map((item) => (
@@ -57,7 +53,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           </div>
         </nav>
 
-        {/* Réseaux sociaux */}
         <div className="flex space-x-6 mb-4">
           {iconList.map((icon) => (
             <Link key={icon.name} href={icon.href} target="_blank" className="text-gray-300 hover:text-white">
@@ -67,7 +62,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
         </div>
       </div>
 
-      {/* Informations supplémentaires */}
       <div className="text-center mt-6">
         <p className="mb-2">{t('footer.description')}</p>
         <p className="text-sm">{t('footer.rights')}</p>
