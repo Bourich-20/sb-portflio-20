@@ -67,7 +67,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
           <Image src={logo} alt="Logo" className="w-20 h-14" />
           <span className="text-2xl font-bold">SOUFIANE BOURICH</span>
         </Link>
-
+  
         <div className="lg:hidden flex items-center">
           <button 
             className="text-white focus:outline-none"
@@ -89,22 +89,28 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
             </svg>
           </button>
         </div>
-
+  
         <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5' : 'hidden'}`}>
-          <ul className={`flex flex-col lg:flex-row lg:space-x-4`}>
+          <ul className="flex flex-col lg:flex-row lg:space-x-4">
             {['profil', 'technologies', 'projects', 'education', 'Experience', 'contact'].map((item) => (
-              <li className="mb-2 lg:mb-0 lg:mr-4" key={item}>
+              <li className="mb-2 lg:mb-0 lg:mr-4 relative group" key={item}>
                 <Link
-                  className={`block px-4 py-2 rounded-md text-white text-base font-medium transition-all duration-300 ${activeLink === item ? 'bg-gray-700 text-lg' : 'hover:bg-gray-700'}`}
+                  className={`block px-4 py-2 text-white text-base font-medium transition-all duration-300 ${
+                    activeLink === item ? 'underline-active' : 'group-hover:text-white'
+                  }`}
                   href={`/#${item}`}
                   onClick={() => handleClick(item)}
                 >
-                  {t(item)} 
+                  {t(item)}
+                  <span 
+  className={`absolute left-0 bottom-0 h-1 w-full transform scale-x-0 ${isDarkMode ? 'bg-gradient-to-r from-blue-400 to-pink-500' :'bg-orange-400' } transition-transform duration-500 ease-in-out group-hover:scale-x-100 ${activeLink === item ? 'scale-x-100' : ''}`}
+></span>
+
                 </Link>
               </li>
             ))}
           </ul>
-
+  
           <div className="relative flex items-center" ref={langMenuRef}>
             <button 
               className="bg-none flex items-center text-white focus:outline-none" 
@@ -118,7 +124,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
               )}
               <FaCaretDown className="ml-1 w-4 h-4 text-white" />
             </button>
-
+  
             {isLangMenuOpen && (
               <div className={`absolute left-0 top-full mt-2 rounded-md shadow-lg z-10 w-48 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                 <h4 className={`capitalize font-medium text-sm px-6 py-1 text-start ${isDarkMode ? 'text-white' : 'text-app-blue'}`}>{t('language')}</h4>
@@ -138,7 +144,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
             )}
           </div>
         </div>
-   
+  
         <button 
           className="text-white ml-4 lg:ml-0"
           onClick={toggleDarkMode}
@@ -153,4 +159,5 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
       </div>
     </nav>
   );
+  
 }

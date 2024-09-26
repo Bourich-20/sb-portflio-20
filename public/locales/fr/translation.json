@@ -7,8 +7,8 @@
   "language": "Langue",
   "french": "Français",
   "english": "English",
-  "welcome_text": "👋 Bonjour, bienvenue ici !",
-  "short_description": "Je suis un développeur Full Stack, axé sur la fourniture de solutions performantes, sécurisées et rapides pour les applications web, mobiles et de bureau. Je me spécialise dans la sécurité des bases de données, l'intégration d'API et l'utilisation des technologies d'IA pour améliorer l'expérience utilisateur.",
+  "welcome_text": "👋 Bonjour, bienvenue ici ! Je suis ingénieur informatique.",
+  "short_description": "En tant que développeur Full Stack, je m'engage à fournir des solutions performantes, sécurisées et rapides pour les applications web, mobiles et de bureau. Je me spécialise dans la sécurité des bases de données, l'intégration d'API et l'utilisation des technologies d'intelligence artificielle pour automatiser des applications sans intervention manuelle.",
   "view_cv": "CONSULTER LE CV",
   "view_linkedin": "CONSULTER LinkedIn",
   "Tech" : "Technologies utilisées",
@@ -25,7 +25,7 @@
   "projectName2" : "Site Web Arqaam dans l'entreprise",
   "projectName3":"Application mobile EMG pour les médecins et tous les patients",
   "projectName4":"Application mobile en temps réel pour suivre les camions à ordures",
-  "projectName5":"Site Web Freelance --------------> \"Aji Stagi\"",
+  "projectName5":"Site Web Freelance --------------------------------------------------------> \"Aji Stagi\"",
   "projectName6": "Application mobile \"SYNDICAT\"",
   "projectName7":"Application mobile \"UrgentCall\"",
   "projectName8": "Site Web ---------->\"GestionVols\"",
@@ -113,7 +113,10 @@
 "profil": "Profil",
 "technologies": "Technologies",
 "experience": "Expérience",
-"contact": "Contact"
+"contact": "Contact",
+"certificate_title" :  "Attestation chez",
+"view_attestation" : "Voir l'attestation"
+
 }
 
 

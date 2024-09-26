@@ -12,7 +12,6 @@ import twitter from '../images/twitterx.png';
 import instagram from '../images/instagram.png';
 import gmail from '../images/gmail.png';
 
-
 interface FooterProps {
   isDarkMode: boolean;
 }
@@ -29,18 +28,22 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
   ];
 
   return (
-    <footer className={`py-10 mt-0 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'} text-white`}>
+    <footer className={`py-10 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'} text-white`}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-5">
-        <div className="flex items-center mb-6 lg:mb-0 text-center lg:text-left">
-          <Image src={logo} alt="Logo" className="w-40 h-45 mr-2" /> {/* Espace à droite du logo */}
-          <div className="flex flex-col">
+        
+        {/* Left Column: Logo and Name */}
+        <div className="flex flex-col items-start mb-6 lg:mb-0">
+        <Image src={logo} alt="Logo" className="w-48 h-46 mb-2" />
+          <div>
             <h1 className="text-3xl font-bold mb-1">SOUFIANE BOURICH</h1>
             <p className="text-sm text-gray-300">{t('footer.tagline')}</p>
           </div>
         </div>
 
-        <nav className="flex flex-col lg:flex-row mb-6 lg:mb-0 items-center">
-          <div className="flex flex-col lg:flex-row lg:space-x-10 mb-4 lg:mb-0">
+        {/* Right Column: Centered Navigation Links, Social Media Icons, and Footer Description */}
+        <div className="flex flex-col items-center justify-center flex-1 mb-6 lg:mb-0">
+          {/* Centered Navigation Links */}
+          <nav className="flex flex-col lg:flex-row lg:space-x-10 mb-4 items-center justify-center">
             {['profil', 'technologies', 'projects', 'education', 'experience', 'contact'].map((item) => (
               <Link 
                 key={item} 
@@ -50,21 +53,23 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
                 {t(`${item}`)} 
               </Link>
             ))}
+          </nav>
+
+          {/* Centered Social Media Icons */}
+          <div className="flex justify-center space-x-6 mb-4">
+            {iconList.map((icon) => (
+              <Link key={icon.name} href={icon.href} target="_blank" className="text-gray-300 hover:text-white">
+                <Image src={isDarkMode ? icon.darkComponent : icon.component} alt={icon.name} width={24} height={24} />
+              </Link>
+            ))}
           </div>
-        </nav>
 
-        <div className="flex space-x-6 mb-4">
-          {iconList.map((icon) => (
-            <Link key={icon.name} href={icon.href} target="_blank" className="text-gray-300 hover:text-white">
-              <Image src={isDarkMode ? icon.darkComponent : icon.component} alt={icon.name} width={24} height={24} />
-            </Link>
-          ))}
+          {/* Footer Description centered */}
+          <div className="text-center mt-6">
+            <p className="mb-2">{t('footer.description')}</p>
+            <p className="text-sm">{t('footer.rights')}</p>
+          </div>
         </div>
-      </div>
-
-      <div className="text-center mt-6">
-        <p className="mb-2">{t('footer.description')}</p>
-        <p className="text-sm">{t('footer.rights')}</p>
       </div>
     </footer>
   );

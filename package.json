@@ -18,6 +18,7 @@
     "i18next-http-backend": "^2.6.1",
     "next": "14.2.12",
     "next-i18next": "^15.3.1",
+    "pdfjs-dist": "^3.11.174",
     "react": "^18",
     "react-dom": "^18",
     "react-flag-kit": "^1.1.1",

@@ -51,23 +51,23 @@ export default function Home() {
       <div >
         <Technologie isDarkMode={isDarkMode} />
       </div>
+
+      <div id="Experience">
+        <WorkExperience isDarkMode={isDarkMode} />
+      </div>
       
       <div id="projects">
         <ProjectList isDarkMode={isDarkMode} />
       </div>
       
-      <div id="education">
-        <EducationPath isDarkMode={isDarkMode} />
-      </div>
-      
-      <div id="Experience">
-        <WorkExperience isDarkMode={isDarkMode} />
-      </div>
-      
       <div id="technologies">
         <TechnologiesDisplay isDarkMode={isDarkMode} />
       </div>
-      
+
+      <div id="education">
+        <EducationPath isDarkMode={isDarkMode} />
+      </div>
+
       <div id="contact">
         <Contact isDarkMode={isDarkMode} />
       </div>

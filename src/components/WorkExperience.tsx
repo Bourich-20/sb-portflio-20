@@ -1,20 +1,23 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import codingArtIcon from '../images/codingArt.jpeg'; 
-import diamotechIcon from '../images/diamonteck.jpeg'; 
-import freelanceIcon from '../images/freelance.png'; 
-import springIcon from '../images/icon/icons8-spring-boot-48.png'; 
-import nestIcon from '../images/icon/nestJsLogo.png';  
-import angularIcon from '../images/icon/icons8-angular-48.png'; 
-import ionicIcon from '../images/icon/icons8-ionic-48.png'; 
+import codingArtIcon from '../images/codingArt.jpeg';
+import diamotechIcon from '../images/diamonteck.jpeg';
+import freelanceIcon from '../images/freelance.png';
+import springIcon from '../images/icon/icons8-spring-boot-48.png';
+import nestIcon from '../images/icon/nestJsLogo.png';
+import angularIcon from '../images/icon/icons8-angular-48.png';
+import ionicIcon from '../images/icon/icons8-ionic-48.png';
 import nodejsIcon from '../images/icon/nodeJs.png';
-import flutterIcon from '../images/icon/icons8-flutter-48.png'; 
+import flutterIcon from '../images/icon/icons8-flutter-48.png';
 import cityIcon from '../images/icon/local.png';
-import periodIcon from '../images/icon/period.png'; 
-import developerIcon from '../images/icon/devloper.png'; 
+import periodIcon from '../images/icon/period.png';
+import developerIcon from '../images/icon/devloper.png';
 import arrowIcon from '../images/icon/arraw.png';
 import { useTranslation } from 'react-i18next';
+import ExperienceCertificateViewer from './ExperienceCertificateViewer'
+import attestationIcon from '../images/icon/attested.png'
+import Notification from './Notification';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,6 +30,12 @@ const cardVariants = {
 
 const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const { t } = useTranslation();
+  const [showCertificateViewer, setShowCertificateViewer] = useState(false);
+  const [certificatePath, setCertificatePath] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const pathDiamotech = "/pdf-cv/diamotech-fr.pdf";
+  const pathCodingArt = "/pdf-cv/codingArt-fr.pdf";;
+  const [notification, setNotification] = useState<string | null>(null); 
 
   const workExperienceData = [
     {
@@ -44,6 +53,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         { icon: nestIcon, name: 'NestJS' }
       ],
       icon: codingArtIcon,
+      attesPath: pathCodingArt,
+      isVisible : false
     },
     {
       title: t("exp2.title"),
@@ -60,6 +71,10 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         { icon: nodejsIcon, name: 'Node.js' }
       ],
       icon: diamotechIcon,
+      attesPath: pathDiamotech,
+      isVisible : true
+
+
     },
     {
       title: t("exp3.title"),
@@ -76,6 +91,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         { icon: nodejsIcon, name: 'Node.js' }
       ],
       icon: freelanceIcon,
+
     },
     {
       title: t("exp4.title"),
@@ -94,11 +110,22 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       icon: freelanceIcon,
     },
   ];
-  
-  
+  const handleViewCertificate = (path: string, company: string, isVisible: boolean) => {
+    if (isVisible) {
+      setCertificatePath(path);
+      setCompanyName(company);
+      setShowCertificateViewer(true);
+    } else {
+      setNotification("C'est encore de stage"); 
+    }
+  };
+
+  const closeCertificateViewer = () => {
+    setShowCertificateViewer(false);
+  };
   return (
     <div className={`flex flex-col items-center p-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'} min-h-screen`}>
-      <h2 
+      <h2
         className={`text-4xl font-extrabold mb-16 text-center transition-transform duration-300 hover:scale-105 ${isDarkMode ? 'text-pink-300' : 'text-pink-600'}`}>
         {t('exp_title')}
       </h2>
@@ -118,20 +145,31 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
               <p className={`text-4xl font-extrabold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'} mb-2`}>
                 {exp.company}
               </p>
+            
+
               <div className="flex items-center mt-2">
-                <Image src={cityIcon} alt="City Icon" width={30} height={30} className="mr-2" />
+                <Image src={cityIcon} alt="Icône Ville" width={30} height={30} className="mr-2" />
                 <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
                   {exp.city}
                 </p>
               </div>
               <div className="flex items-center mt-1">
-                <Image src={periodIcon} alt="Period Icon" width={20} height={20} className="mr-2" />
+                <Image src={periodIcon} alt="Icône Période" width={20} height={20} className="mr-2" />
                 <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
                   {exp.period}
                 </p>
               </div>
+              {exp.attesPath && (
+                <button
+                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible)}
+                  className={`flex items-center mt-4 p-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition duration-300`}
+                >
+                  <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" />
+                  {t("view_attestation")}
+                </button>
+              )}
             </div>
-  
+
             <div className="flex-1 p-4">
               <h3 className={`text-3xl font-semibold mb-4 ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.title}</h3>
               <ul className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} font-semibold leading-relaxed`}>
@@ -141,10 +179,10 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-wrap mt-6 ml-auto"> 
+              <div className="flex flex-wrap mt-6 ml-auto">
                 <div className="flex flex-wrap mt-6 ml-auto justify-end">
-                  <Image src={developerIcon} alt="Technology" width={40} height={40} className="mr-4 mb-4" />
-                  <Image src={arrowIcon} alt="Technology" width={30} height={30} className="mr-4 mb-4" />
+                  <Image src={developerIcon} alt="Technologie" width={40} height={40} className="mr-4 mb-4" />
+                  <Image src={arrowIcon} alt="Technologie" width={30} height={30} className="mr-4 mb-4" />
                   {exp.technologies.map((tech, i) => (
                     <div key={i} className="relative group mr-4 mb-4 p-2 border-2 border-gray-300 rounded-md">
                       <Image src={tech.icon} alt={tech.name} width={40} height={40} />
@@ -159,9 +197,22 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           </motion.div>
         ))}
       </div>
+
+      {showCertificateViewer && (
+        <ExperienceCertificateViewer
+          t={t}
+          isDarkMode={isDarkMode}
+          certificatePath={certificatePath}
+          companyName={companyName}
+          onClose={closeCertificateViewer}
+        />
+      )}
+        {notification && (
+        <Notification message={notification} type='error' onClose={() => setNotification(null)} />
+      )}
+
     </div>
   );
-  
 };
 
 export default WorkExperience;

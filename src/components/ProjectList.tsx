@@ -7,7 +7,7 @@ import emg1 from '../images/emg.jpg';
 import emg2 from '../images/emg2.jpg';
 import emg3 from '../images/emg3.jpg';
 import flutterIcon from "../images/icon/icons8-flutter-48.png";
-import nodeJsIcon from '../images/node.png'
+import nodeJsIcon from '../images/icon/nodeJs.png';
 import camion1 from '../images/camion1.jpg'
 import camion2 from '../images/camion2.jpg'
 import camion3 from '../images/camion3.jpg'
@@ -60,7 +60,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         appLink: null,
         techIcons: [
           { src: ionicIcon, name: 'Ionic Angular' },
-          { src: springBootIcon, name: 'Spring Boot' },
+          { src: nodeJsIcon, name: 'Node Js' },
         ],
       },
       {
@@ -130,7 +130,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       {
         imageSrc: [call1, call2, call3],
         projectName: t('projectName7'),
-        periodMonths: 5,
+        periodMonths: 3,
         cardType: 'mobile' as CardType,
         githubLink: null,
         appLink: null,
@@ -155,7 +155,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       {
         imageSrc: [sampleImage],
         projectName: t('projectName9'),
-        periodMonths: 9,
+        periodMonths: 2,
         cardType: 'desktop' as CardType,
         githubLink: 'https://github.com/etudes-desktop-app',
         appLink: null,
@@ -185,7 +185,6 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   };
   
   const categoryStyles = 'text-gray-600 text-lg cursor-pointer hover:text-orange-500 transition duration-300';
-  const activeCategoryStyles = 'text-orange-500 font-bold'; 
 
   const handleCardClick = (images: StaticImageData[]) => {
     setSelectedImages(images);
@@ -204,25 +203,28 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       >
         {t('Projects')}
       </motion.h1>
-
+  
       <motion.div className="flex justify-center items-center space-x-4 mb-8">
         {['entreprise', 'freelance', 'etudes'].map((category, index) => (
           <motion.span
             key={index}
             variants={breadcrumbVariants}
             whileHover="hover"
-            className={`${categoryStyles} ${selectedCategory === category ? activeCategoryStyles : ''}`}
+            className={`
+              ${categoryStyles} 
+              ${selectedCategory === category ? 'text-orange-500 font-bold' : ''} 
+            `}
             onClick={() => setSelectedCategory(category as 'entreprise' | 'freelance' | 'etudes')}
           >
             {category === 'entreprise' && <Image src={entrepriseProjectsIcon} alt="Entreprise Projects" className="inline-block w-6 h-6 mr-2" />}
             {category === 'freelance' && <Image src={freelanceProjectsIcon} alt="Freelance Projects" className="inline-block w-6 h-6 mr-2" />}
             {category === 'etudes' && <Image src={academicProjectsIcon} alt="Academic Projects" className="inline-block w-6 h-6 mr-2" />}
-            {t(`${category}`)} 
+            {t(`${category}`)}
             {index < 2 && <span className="mx-2">/</span>}
           </motion.span>
         ))}
       </motion.div>
-
+  
       <motion.div
         className="relative mb-8 p-4 border-4 rounded-lg shadow-lg"
         initial="hidden"
@@ -256,12 +258,13 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           </div>
         </div>
       </motion.div>
-
+  
       {isModalOpen && selectedImages && (
         <ModalGallery images={selectedImages} onClose={handlecloseModal} isDarkMode={isDarkMode} />
       )}
     </div>
   );
+  
 };
 
 export default ProjectList;
