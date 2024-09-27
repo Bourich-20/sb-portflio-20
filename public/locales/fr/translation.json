@@ -47,7 +47,7 @@
     "title": "Stage : Backend",
     "company": "CodingArt",
     "city": "Agadir",
-    "period": "1 septembre 2024 - 1 octobre 2024",
+    "period": "1 juillet  2024 - 1 octobre 2024",
     "description": {
       "des1": "Travail sur le développement backend en utilisant Spring Boot, mise en œuvre de Spring Security avec JWT, Spring Data et JPA.",
       "des2": "Utilisation de Docker et Kubernetes pour la conteneurisation et le déploiement.",
