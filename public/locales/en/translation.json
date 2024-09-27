@@ -57,7 +57,7 @@
   },
   "exp2": {
     "title": "Internship: Full Stack Developer",
-    "company": "Diamotech",
+    "company": "Diamatech",
     "city": "Casablanca",
     "period": "July 17, 2023 - September 3, 2023",
     "description": {
@@ -117,6 +117,7 @@
   "experience": "Experience",
   "contact": "Contact",
   "certificate_title" :  "Certificate at",
-  "view_attestation" : " View Attestation"
+  "view_attestation" : " View Attestation",
+  "encoreStage" : "It's still an internship"
 
 }

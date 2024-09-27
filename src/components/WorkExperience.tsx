@@ -116,7 +116,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       setCompanyName(company);
       setShowCertificateViewer(true);
     } else {
-      setNotification("C'est encore de stage"); 
+      setNotification(t('encoreStage')); 
     }
   };
 

@@ -56,7 +56,7 @@
   },
   "exp2": {
     "title": "Stage : Développeur Full Stack",
-    "company": "Diamotech",
+    "company": "Diamatech",
     "city": "Casablanca",
     "period": "17 juillet 2023 - 3 septembre 2023",
     "description": {
@@ -115,8 +115,8 @@
 "experience": "Expérience",
 "contact": "Contact",
 "certificate_title" :  "Attestation chez",
-"view_attestation" : "Voir l'attestation"
-
+"view_attestation" : "Voir l'attestation",
+"encoreStage" : "C'est encore de stage"
 }
 
 
