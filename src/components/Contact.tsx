@@ -93,7 +93,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     
 
   return (
-    <div className={`flex flex-col items-center justify-center w-full min-h-[700px] px-4 pt-7 rounded-t-lg border border-gray-300 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-purple-400 text-black'}`}>
+    <div className={`flex flex-col items-center justify-center w-full min-h-[700px] px-4 pt-7 rounded-t-lg border border-gray-300 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-blue-200 text-black'}`}>
         {notification && ( 
             <Notification
                 message={notification.message}
