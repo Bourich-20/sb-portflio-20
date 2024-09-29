@@ -4,8 +4,8 @@ const ExperienceCertificateViewer: React.FC<{
     isDarkMode: boolean; 
     t: (key: string) => string; 
     onClose: () => void; 
-    certificatePath: string; // New parameter for certificate PDF path
-    companyName: string; // Parameter for company name
+    certificatePath: string; 
+    companyName: string;
 }> = ({ isDarkMode, t, onClose, certificatePath, companyName }) => {
 
     const closeModal = () => {

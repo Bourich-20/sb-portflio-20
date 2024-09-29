@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-// next.config.mjs
 const nextConfig = {
     webpack: (config) => {
       config.module.rules.push({
@@ -7,7 +6,7 @@ const nextConfig = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash].[ext]', // Pour personnaliser le nom du fichier
+            name: '[name].[hash].[ext]', 
           },
         },
       });

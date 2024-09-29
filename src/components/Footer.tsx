@@ -31,7 +31,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
     <footer className={`py-10 ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'} text-white`}>
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-5">
         
-        {/* Left Column: Logo and Name */}
         <div className="flex flex-col items-start mb-6 lg:mb-0">
         <Image src={logo} alt="Logo" className="w-48 h-46 mb-2" />
           <div>
@@ -40,9 +39,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           </div>
         </div>
 
-        {/* Right Column: Centered Navigation Links, Social Media Icons, and Footer Description */}
         <div className="flex flex-col items-center justify-center flex-1 mb-6 lg:mb-0">
-          {/* Centered Navigation Links */}
           <nav className="flex flex-col lg:flex-row lg:space-x-10 mb-4 items-center justify-center">
             {['profil', 'technologies', 'projects', 'education', 'experience', 'contact'].map((item) => (
               <Link 
@@ -55,7 +52,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             ))}
           </nav>
 
-          {/* Centered Social Media Icons */}
           <div className="flex justify-center space-x-6 mb-4">
             {iconList.map((icon) => (
               <Link key={icon.name} href={icon.href} target="_blank" className="text-gray-300 hover:text-white">
@@ -64,7 +60,6 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             ))}
           </div>
 
-          {/* Footer Description centered */}
           <div className="text-center mt-6">
             <p className="mb-2">{t('footer.description')}</p>
             <p className="text-sm">{t('footer.rights')}</p>

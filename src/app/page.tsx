@@ -1,4 +1,4 @@
-"use client"; // This line makes the component a client component
+"use client";
 
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
@@ -20,7 +20,6 @@ export default function Home() {
     const initialDarkMode = hour >= 20 || hour < 6;
     setIsDarkMode(initialDarkMode);
     
-    // Set the initial dark mode class
     document.body.classList.toggle('dark', initialDarkMode);
   }, []);
 
