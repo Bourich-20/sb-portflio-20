@@ -87,6 +87,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     width={300}
     height={300}
     className="profileImage mb-4 rounded-full shadow-lg object-cover"
+    priority 
   />
 
 <div className="text-center py-0"> 
@@ -132,6 +133,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 width={600}
                 height={600}
                 className="w-full h-full"
+                priority 
               />
             </div>
             <div className="w-[600px] h-[600px]">
@@ -141,6 +143,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 width={600}
                 height={600}
                 className="w-full h-full"
+                priority 
               />
             </div>
           </Slider>

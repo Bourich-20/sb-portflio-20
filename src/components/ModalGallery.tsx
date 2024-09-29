@@ -41,6 +41,7 @@ const ModalGallery: React.FC<ModalGalleryProps> = ({ images, onClose, isDarkMode
               width={600}
               height={400}
               className="object-contain max-h-full max-w-full"
+              priority 
             />
           )}
         </div>

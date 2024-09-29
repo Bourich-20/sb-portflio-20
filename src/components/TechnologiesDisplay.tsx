@@ -129,7 +129,7 @@ const TechnologiesDisplay: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) 
                   }`}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Image src={tech.icon} alt={tech.name} width={48} height={48} />
+                  <Image src={tech.icon} alt={tech.name} width={48} height={48} priority />
                   <span
                     className={`mt-4 text-lg font-semibold ${
                       isDarkMode ? "text-blue-300" : "text-blue-600"

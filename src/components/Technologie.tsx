@@ -99,6 +99,7 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
               alt={icon.name}
               width={64}
               height={64}
+              priority 
             />
             <span className="text-sm mt-2">{icon.name}</span>
           </motion.div>

@@ -216,9 +216,9 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             `}
             onClick={() => setSelectedCategory(category as 'entreprise' | 'freelance' | 'etudes')}
           >
-            {category === 'entreprise' && <Image src={entrepriseProjectsIcon} alt="Entreprise Projects" className="inline-block w-6 h-6 mr-2" />}
-            {category === 'freelance' && <Image src={freelanceProjectsIcon} alt="Freelance Projects" className="inline-block w-6 h-6 mr-2" />}
-            {category === 'etudes' && <Image src={academicProjectsIcon} alt="Academic Projects" className="inline-block w-6 h-6 mr-2" />}
+            {category === 'entreprise' && <Image src={entrepriseProjectsIcon} alt="Entreprise Projects" className="inline-block w-6 h-6 mr-2" priority />}
+            {category === 'freelance' && <Image src={freelanceProjectsIcon} alt="Freelance Projects" className="inline-block w-6 h-6 mr-2" priority />}
+            {category === 'etudes' && <Image src={academicProjectsIcon} alt="Academic Projects" className="inline-block w-6 h-6 mr-2" priority  />}
             {t(`${category}`)}
             {index < 2 && <span className="mx-2">/</span>}
           </motion.span>

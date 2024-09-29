@@ -64,7 +64,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
     <nav className={`p-5 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/#profil" className="flex items-center space-x-2 text-white">
-          <Image src={logo} alt="Logo" className="w-20 h-14" />
+          <Image src={logo} alt="Logo" className="w-20 h-14" priority />
           <span className="text-2xl font-bold">SOUFIANE BOURICH</span>
         </Link>
   
@@ -118,9 +118,9 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
               aria-label="Change Language"
             >
               {selectedLang === 'fr' ? (
-                <Image src={iconFrance} alt="Drapeau français" className="w-7 h-7" />
+                <Image src={iconFrance} alt="Drapeau français" className="w-7 h-7" priority  />
               ) : (
-                <Image src={iconEn} alt="Drapeau anglais" className="w-7 h-7" />
+                <Image src={iconEn} alt="Drapeau anglais" className="w-7 h-7" priority  />
               )}
               <FaCaretDown className="ml-1 w-4 h-4 text-white" />
             </button>
@@ -132,13 +132,13 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
                   className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'fr' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
                   onClick={() => changeLanguage('fr')}
                 >
-                  <Image src={iconFrance} alt="Drapeau français" className="w-5 h-5" /> {t('french')}
+                  <Image src={iconFrance} alt="Drapeau français" className="w-5 h-5"  priority /> {t('french')}
                 </button>
                 <button 
                   className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'en' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
                   onClick={() => changeLanguage('en')}
                 >
-                  <Image src={iconEn} alt="Drapeau anglais" className="w-5 h-5" /> {t('english')}
+                  <Image src={iconEn} alt="Drapeau anglais" className="w-5 h-5" priority  /> {t('english')}
                 </button>
               </div>
             )}

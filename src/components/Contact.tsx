@@ -108,7 +108,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse', delay: 2 }}
                 >
-                    <Image src={contactImage} alt="Contact" className="w-150 h-150 object-cover rounded-lg shadow-md" />
+                    <Image src={contactImage} alt="Contact" className="w-150 h-150 object-cover rounded-lg shadow-md" priority  />
                 </motion.div>
             </div>
             <motion.form

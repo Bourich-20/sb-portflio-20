@@ -82,6 +82,7 @@ const EducationPath: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 alt="Diplôme"
                 width={120}
                 height={120}
+                priority 
               />
               {index < educationData.length - 1 && (
                 <div className="h-full w-1 bg-blue-300"></div>
@@ -99,6 +100,7 @@ const EducationPath: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     alt={`${edu.institution} logo`}
                     width={150}
                     height={120}
+                    priority 
                   />
                 )}
               </div>

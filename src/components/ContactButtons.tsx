@@ -43,6 +43,7 @@ export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
           width={showIcons ? 40 : 70} 
           height={showIcons ? 40 : 70} 
           unoptimized 
+          priority 
         />
       </button>
       
@@ -62,6 +63,7 @@ export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
                 width={40} 
                 height={40} 
                 className="transition-transform duration-300" 
+                priority 
               />
               <span className="absolute left-14 bg-blue-600 text-white py-1 px-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap transform group-hover:translate-x-2">
                 {val.name}

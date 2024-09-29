@@ -84,6 +84,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           height={200}
           className="w-full h-48 object-cover cursor-pointer"
           onClick={onClick}
+          priority 
         />
         <div className="p-4 flex-grow">
           <h2 className="text-xl font-semibold mb-2">{projectName}</h2>
@@ -136,6 +137,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         height={32}
         className="w-12 h-12 transition-transform duration-300 hover:scale-110"
         onClick={onClick} 
+        priority 
       />
       {hoveredIcon === icon.name && (
         <div className="absolute -top-10 bg-gray-700 text-white text-xs p-1 rounded">

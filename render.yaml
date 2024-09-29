@@ -7,5 +7,12 @@ services:
     startCommand: npm run start
     envVars:
       - key: NODE_VERSION
-        value: 20.15.0  
+        value: 20.15.0
+      - key: NODE_ENV
+        value: production
     autoDeploy: true
+    healthCheckPath: /
+    deployment:
+      healthCheckTimeoutSeconds: 90
+      numInstances: 1
+      autoRestart: true

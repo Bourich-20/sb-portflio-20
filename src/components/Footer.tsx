@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
       <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center px-5">
         
         <div className="flex flex-col items-start mb-6 lg:mb-0">
-        <Image src={logo} alt="Logo" className="w-48 h-46 mb-2" />
+        <Image src={logo} alt="Logo" className="w-48 h-46 mb-2"  priority />
           <div>
             <h1 className="text-3xl font-bold mb-1">SOUFIANE BOURICH</h1>
             <p className="text-sm text-gray-300">{t('footer.tagline')}</p>
@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           <div className="flex justify-center space-x-6 mb-4">
             {iconList.map((icon) => (
               <Link key={icon.name} href={icon.href} target="_blank" className="text-gray-300 hover:text-white">
-                <Image src={isDarkMode ? icon.darkComponent : icon.component} alt={icon.name} width={24} height={24} />
+                <Image src={isDarkMode ? icon.darkComponent : icon.component} alt={icon.name} width={24} height={24} priority  />
               </Link>
             ))}
           </div>

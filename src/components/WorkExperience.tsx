@@ -141,20 +141,20 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             whileHover={{ scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
           >
             <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 mb-6 lg:mb-0">
-              <Image src={exp.icon} alt={exp.company} width={80} height={80} className="rounded-full mb-4 shadow-lg border-2 border-gray-300" />
+              <Image src={exp.icon} alt={exp.company} width={80} height={80} className="rounded-full mb-4 shadow-lg border-2 border-gray-300" priority />
               <p className={`text-4xl font-extrabold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'} mb-2`}>
                 {exp.company}
               </p>
             
 
               <div className="flex items-center mt-2">
-                <Image src={cityIcon} alt="Icône Ville" width={30} height={30} className="mr-2" />
+                <Image src={cityIcon} alt="Icône Ville" width={30} height={30} className="mr-2" priority />
                 <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
                   {exp.city}
                 </p>
               </div>
               <div className="flex items-center mt-1">
-                <Image src={periodIcon} alt="Icône Période" width={20} height={20} className="mr-2" />
+                <Image src={periodIcon} alt="Icône Période" width={20} height={20} className="mr-2" priority  />
                 <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
                   {exp.period}
                 </p>
@@ -164,7 +164,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                   onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible)}
                   className={`flex items-center mt-4 p-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition duration-300`}
                 >
-                  <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" />
+                  <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" priority />
                   {t("view_attestation")}
                 </button>
               )}
@@ -181,11 +181,11 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
               </ul>
               <div className="flex flex-wrap mt-6 ml-auto">
                 <div className="flex flex-wrap mt-6 ml-auto justify-end">
-                  <Image src={developerIcon} alt="Technologie" width={40} height={40} className="mr-4 mb-4" />
-                  <Image src={arrowIcon} alt="Technologie" width={30} height={30} className="mr-4 mb-4" />
+                  <Image src={developerIcon} alt="Technologie" width={40} height={40} className="mr-4 mb-4" priority />
+                  <Image src={arrowIcon} alt="Technologie" width={30} height={30} className="mr-4 mb-4" priority  />
                   {exp.technologies.map((tech, i) => (
                     <div key={i} className="relative group mr-4 mb-4 p-2 border-2 border-gray-300 rounded-md">
-                      <Image src={tech.icon} alt={tech.name} width={40} height={40} />
+                      <Image src={tech.icon} alt={tech.name} width={40} height={40}  priority />
                       <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-gray-800 text-white text-sm rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         {tech.name}
                       </span>
