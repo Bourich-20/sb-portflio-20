@@ -18,6 +18,7 @@ import { useTranslation } from 'react-i18next';
 import ExperienceCertificateViewer from './ExperienceCertificateViewer'
 import attestationIcon from '../images/icon/attested.png'
 import Notification from './Notification';
+import { truncate } from 'fs/promises';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -54,7 +55,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       ],
       icon: codingArtIcon,
       attesPath: pathCodingArt,
-      isVisible : false
+      isVisible : true
     },
     {
       title: t("exp2.title"),
