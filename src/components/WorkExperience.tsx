@@ -18,7 +18,6 @@ import { useTranslation } from 'react-i18next';
 import ExperienceCertificateViewer from './ExperienceCertificateViewer'
 import attestationIcon from '../images/icon/attested.png'
 import Notification from './Notification';
-import { truncate } from 'fs/promises';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
