@@ -16,7 +16,7 @@ const CVViewer: React.FC<{ isDarkMode: boolean; t: (key: string) => string; onCl
                 <h2 className={`text-2xl font-bold mb-4 text-center ${isDarkMode ? 'text-white' : 'text-black'}`}>
                     {t('cv_title')}
                 </h2>
-                <div style={{ height: '590px' }} className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                <div style={{ height: '470px' }} className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                     <iframe
                         src={cvPath} 
                         className={`w-full h-full border-0 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}

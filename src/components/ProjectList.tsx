@@ -45,7 +45,7 @@ type CardType = 'web' | 'desktop' | 'mobile';
 
 
 const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
-  const [selectedCategory, setSelectedCategory] = useState<'entreprise' | 'freelance' | 'etudes'>('freelance');
+  const [selectedCategory, setSelectedCategory] = useState<'entreprise' | 'freelance' | 'etudes'>('etudes');
   const [selectedImages, setSelectedImages] = useState<StaticImageData[] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const { t } = useTranslation(); 
@@ -231,32 +231,35 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         animate="visible"
         variants={cardContainerVariants}
       >
-        <div className="absolute inset-0 rounded-lg border-2 opacity-50 animate-pulse bg-purple-200"></div>
-        <div className="relative z-10">
-          <h2 className="text-2xl font-bold mb-4">
-            {selectedCategory === 'entreprise' && t('projectTitles.entreprise')}
-            {selectedCategory === 'freelance' && t('projectTitles.freelance')}
-            {selectedCategory === 'etudes' && t('projectTitles.etudes')}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            {projects[selectedCategory].map((project, index) => (
-              <motion.div key={index} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                <ProjectCard
-                  key={project.projectName}
-                  images={project.imageSrc}
-                  projectName={project.projectName}
-                  periodMonths={project.periodMonths}
-                  cardType={project.cardType}
-                  githubLink={project.githubLink}
-                  appLink={project.appLink}
-                  techIcons={project.techIcons}
-                  onClick={() => handleCardClick(project.imageSrc)}
-                  isDarkMode={isDarkMode}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <div className="relative mb-8 p-4 border-4 rounded-lg shadow-lg">
+  <div className="absolute inset-0 rounded-lg border-2 opacity-50 animate-pulse bg-purple-200"></div>
+  <div className="relative z-10">
+    <h2 className="text-2xl font-bold mb-4">
+      {selectedCategory === 'entreprise' && t('projectTitles.entreprise')}
+      {selectedCategory === 'freelance' && t('projectTitles.freelance')}
+      {selectedCategory === 'etudes' && t('projectTitles.etudes')}
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {projects[selectedCategory].map((project, index) => (
+        <motion.div key={index} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+          <ProjectCard
+            key={project.projectName}
+            images={project.imageSrc}
+            projectName={project.projectName}
+            periodMonths={project.periodMonths}
+            cardType={project.cardType}
+            githubLink={project.githubLink}
+            appLink={project.appLink}
+            techIcons={project.techIcons}
+            onClick={() => handleCardClick(project.imageSrc)}
+            isDarkMode={isDarkMode}
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</div>
+
       </motion.div>
   
       {isModalOpen && selectedImages && (
