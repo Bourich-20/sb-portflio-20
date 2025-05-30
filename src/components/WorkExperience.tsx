@@ -141,7 +141,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       icon: freelanceIcon,
     },
   ];
-  const handleViewCertificate = (path: string, company: string, isVisible: boolean) => {
+  const handleViewCertificate = (path: string, company: string, isVisible: any) => {
     if (isVisible) {
       setCertificatePath(path);
       setCompanyName(company);
@@ -192,7 +192,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
               </div>
               {(
                 <button
-                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible as any)}
+                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible)}
                   className={`flex items-center mt-4 p-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition duration-300`}
                 >
                   <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" priority />
