@@ -20,7 +20,7 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
   const { t } = useTranslation();
   const [activeLink, setActiveLink] = useState<string>('profil');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [selectedLang, setSelectedLang] = useState<string>('fr'); 
+  const [selectedLang, setSelectedLang] = useState<string>('en'); 
   const [isLangMenuOpen, setIsLangMenuOpen] = useState<boolean>(false);
   const langMenuRef = useRef<HTMLDivElement | null>(null);
 

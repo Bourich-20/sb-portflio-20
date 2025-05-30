@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { FaArrowCircleDown } from 'react-icons/fa';
 import { GoProject } from 'react-icons/go';
 import { useTranslation } from 'react-i18next';
-import CVViewer from './CVViewer'; // Import the CVViewer component
+import CVViewer from './CVViewer'; 
 
 const Typewriter: React.FC<{ text: string; isFirstRender: boolean }> = ({ text, isFirstRender }) => {
     const [displayText, setDisplayText] = useState('');
@@ -81,13 +81,12 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     transition={{ duration: 1 }}
     className={`intro flex-1 text-center lg:ml-[50px] lg:text-left w-full lg:max-w-md mb-0 flex flex-col justify-center items-center 
     ${isDarkMode ? 'bg-gradient-to-r from-blue-800 to-pink-800 text-white' : 'bg-gradient-to-r from-pink-200 to-blue-300 text-black'} 
-    max-h-[700px] overflow-hidden rounded-lg shadow-[0 10px 20px rgba(0,0,0,0.5)] border border-gray-200 transform transition-transform duration-300 hover:scale-105`} 
+    max-h-[540px] overflow-hidden rounded-lg shadow-[0 10px 20px rgba(0,0,0,0.5)] border border-gray-200 transform transition-transform duration-300 hover:scale-105`} 
 >
     <Image
         src={bourihImage}
         alt="Profile"
-        width={240}  // Augmenter la largeur
-        height={240} // Augmenter la hauteur
+        width={200}  
         className="profileImage mb-4 rounded-full shadow-lg object-cover"
         priority 
     />
@@ -101,7 +100,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         </p>
     </div>
 
-    <div className="flex flex-col items-center gap-2 py-0 pb-3"> {/* Augmenter l'espace entre les éléments */} 
+    <div className="flex flex-col items-center gap-2 py-0 pb-3">
         <motion.a
             onClick={handleShowCvViewer} 
             className={`bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold px-4 py-1 rounded-full shadow-lg flex items-center gap-2 hover:shadow-2xl 

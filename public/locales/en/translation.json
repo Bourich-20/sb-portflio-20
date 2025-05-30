@@ -87,6 +87,17 @@
       "des3": "Optimized routes via server communication."
     }
   },
+    "exp5": {
+  "title": "Internship: Full Stack Software Engineer",
+  "company": "HPS",
+  "city": "Casablanca",
+  "period": "February 1, 2025 - July 1, 2025",
+  "description": {
+    "des1": "Designed and implemented a parametric ISO 8583 simulator to assess the performance of PowerCARD interfaces (e.g., FNB Base24), supporting multi-institution and multi-user scenarios.",
+    "des2": "Adopted a microservices architecture to modularize the simulator components, enabling independent deployment and scalability.",
+    "des3": "Integrated Kafka for asynchronous event-driven communication and gRPC for low-latency data synchronization between services, significantly accelerating database updates and real-time interactions."
+  }
+  },
    "exp_title" :"Work Experience",
    "tech_use" : "Technologies Used",
    "bd" : "Databases",

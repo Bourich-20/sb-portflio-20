@@ -72,11 +72,11 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
   return (
     <div
-      className={`relative w-full ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} p-0 overflow-x-auto`}
+      className={`relative w-full mt-2 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} p-0 overflow-x-auto`}
       style={{ overflowY: 'hidden' }}
     >
       <div
-        className={`absolute top-0 left-0 right-0 p-4 ${isDarkMode ? 'bg-pink-800 text-white' : "bg-pink-100 text-black"} rounded-b-lg`}
+        className={`absolute top-0 left-0 right-0 p-8 ${isDarkMode ? 'bg-white text-white' : "bg-pink-100 text-black"} rounded-b-lg`}
       >
       </div>
       <motion.div

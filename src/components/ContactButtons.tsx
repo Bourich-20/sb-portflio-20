@@ -25,7 +25,7 @@ const iconList = [
 ];
 
 export default function ContactButtons({ isDarkMode }: ContactButtonsProps) {
-  const [showIcons, setShowIcons] = useState(false); 
+  const [showIcons, setShowIcons] = useState(true); 
 
   const toggleIcons = () => {
     setShowIcons(!showIcons);

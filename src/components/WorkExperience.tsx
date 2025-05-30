@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import codingArtIcon from '../images/codingArt.jpeg';
+import hpsIcon from '../images/hps.png';
 import diamotechIcon from '../images/diamonteck.jpeg';
 import freelanceIcon from '../images/freelance.png';
 import springIcon from '../images/icon/icons8-spring-boot-48.png';
@@ -14,6 +15,13 @@ import cityIcon from '../images/icon/local.png';
 import periodIcon from '../images/icon/period.png';
 import developerIcon from '../images/icon/devloper.png';
 import arrowIcon from '../images/icon/arraw.png';
+import dockerIcon from '../images/icon/dockerlogo.png';
+import reactIcon from '../images/icon/reactJsLogo.png';
+import awsIcon from "../images/icon/icons8-aws-48.png";
+import kafkaIcon from "../images/icon/kafka.png";
+import grafanaIcon from "../images/icon/grafana.png";
+import postgreeIcon from "../images/icon/postGreeSql.png"
+
 import { useTranslation } from 'react-i18next';
 import ExperienceCertificateViewer from './ExperienceCertificateViewer'
 import attestationIcon from '../images/icon/attested.png'
@@ -38,6 +46,29 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const [notification, setNotification] = useState<string | null>(null); 
 
   const workExperienceData = [
+        {
+      title: t("exp5.title"),
+      company: t("exp5.company"),
+      city: t("exp5.city"),
+      period: t("exp5.period"),
+      description: {
+        des1: t("exp5.description.des1"),
+        des2: t("exp5.description.des2"),
+        des3: t("exp5.description.des3"),
+      },
+      technologies: [
+        { icon: springIcon, name: 'Spring Boot' },
+        { icon: dockerIcon, name: 'Docker' },
+        { icon: reactIcon, name: 'React + TS' },
+        { icon: awsIcon, name: 'AWS' },
+        { icon: kafkaIcon, name: 'Kafka' },
+        { icon: grafanaIcon, name: 'Grafana' },
+        { icon: postgreeIcon, name: 'Postges' },
+      ],
+      icon: hpsIcon,
+      attesPath: "",
+      isVisible : false
+    },
     {
       title: t("exp1.title"),
       company: t("exp1.company"),
@@ -141,7 +172,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             whileHover={{ scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
           >
             <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 mb-6 lg:mb-0">
-              <Image src={exp.icon} alt={exp.company} width={80} height={80} className="rounded-full mb-4 shadow-lg border-2 border-gray-300" priority />
+              <Image src={exp.icon} alt={exp.company} width={150}  className="rounded-full mb-4 shadow-lg border-2 border-gray-300" priority />
               <p className={`text-4xl font-extrabold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'} mb-2`}>
                 {exp.company}
               </p>
@@ -159,9 +190,9 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                   {exp.period}
                 </p>
               </div>
-              {exp.attesPath && (
+              {(
                 <button
-                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible)}
+                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible as any)}
                   className={`flex items-center mt-4 p-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition duration-300`}
                 >
                   <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" priority />
