@@ -67,7 +67,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       ],
       icon: hpsIcon,
       attesPath: "",
-      isVisible : false
+      isVisible : false,
+      isButtonVisible : true
     },
     {
       title: t("exp1.title"),
@@ -85,7 +86,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       ],
       icon: codingArtIcon,
       attesPath: pathCodingArt,
-      isVisible : true
+      isVisible : true,
+       isButtonVisible : true
     },
     {
       title: t("exp2.title"),
@@ -103,8 +105,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       ],
       icon: diamotechIcon,
       attesPath: pathDiamotech,
-      isVisible : true
-
+      isVisible : true,
+      isButtonVisible : true
 
     },
     {
@@ -122,7 +124,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         { icon: nodejsIcon, name: 'Node.js' }
       ],
       icon: freelanceIcon,
-
+      isVisible : false,
+       isButtonVisible : false
     },
     {
       title: t("exp4.title"),
@@ -139,6 +142,8 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         { icon: nodejsIcon, name: 'Node.js' }
       ],
       icon: freelanceIcon,
+      isVisible : false,
+       isButtonVisible : false
     },
   ];
   const handleViewCertificate = (path: string, company: string, isVisible: boolean) => {
@@ -154,96 +159,100 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const closeCertificateViewer = () => {
     setShowCertificateViewer(false);
   };
-  return (
-    <div className={`flex flex-col items-center p-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'} min-h-screen`}>
-      <h2
-        className={`text-4xl font-extrabold mb-16 text-center transition-transform duration-300 hover:scale-105 ${isDarkMode ? 'text-pink-300' : 'text-pink-600'}`}>
-        {t('exp_title')}
-      </h2>
-      <div className="w-full max-w-6xl space-y-12">
-        {workExperienceData.map((exp, index) => (
-          <motion.div
-            key={index}
-            className={`relative flex flex-col lg:flex-row items-center lg:items-start p-8 rounded-lg shadow-lg transition-shadow duration-300 ease-in-out ${isDarkMode ? 'bg-gray-800 border border-gray-700' : 'bg-blue-90 border border-gray-300'}`}
-            custom={index}
-            initial="hidden"
-            animate="visible"
-            variants={cardVariants}
-            whileHover={{ scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
-          >
-            <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 mb-6 lg:mb-0">
-              <Image src={exp.icon} alt={exp.company} width={150}  className="rounded-full mb-4 shadow-lg border-2 border-gray-300" priority />
-              <p className={`text-4xl font-extrabold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'} mb-2`}>
-                {exp.company}
-              </p>
-            
+return (
+  <div className={`flex flex-col items-center p-8 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'} min-h-screen`}>
+    <h2 className={`text-4xl font-extrabold mb-16 text-center transition-transform duration-300 hover:scale-105 ${isDarkMode ? 'text-pink-300' : 'text-pink-600'}`}>
+      {t('exp_title')}
+    </h2>
 
-              <div className="flex items-center mt-2">
-                <Image src={cityIcon} alt="Icône Ville" width={30} height={30} className="mr-2" priority />
-                <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
-                  {exp.city}
-                </p>
-              </div>
-              <div className="flex items-center mt-1">
-                <Image src={periodIcon} alt="Icône Période" width={20} height={20} className="mr-2" priority  />
-                <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-semibold`}>
-                  {exp.period}
-                </p>
-              </div>
-              {(
-                <button
-                  onClick={() => handleViewCertificate(exp.attesPath!, exp.company,exp.isVisible!)}
-                  className={`flex items-center mt-4 p-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition duration-300`}
-                >
-                  <Image src={attestationIcon} alt="Icône Attestation" width={20} height={20} className="mr-2" priority />
+    <div className="w-full max-w-6xl space-y-16">
+      {workExperienceData.map((exp, index) => (
+        <motion.div
+          key={index}
+          className={`relative flex flex-col lg:flex-row gap-10 items-start p-8 rounded-xl shadow-md transition-shadow duration-300 ${isDarkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'}`}
+          custom={index}
+          initial="hidden"
+          animate="visible"
+          variants={cardVariants}
+          whileHover={{ scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
+        >
+          {/* Left section: logo + info */}
+          <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 gap-4">
+            <Image src={exp.icon} alt={exp.company} width={130} className="rounded-full shadow-lg border-2 border-gray-300" priority />
+            <p className={`text-3xl font-bold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'}`}>
+              {exp.company}
+            </p>
+
+            <div className="flex items-center text-base">
+              <Image src={cityIcon} alt="Ville" width={24} height={24} className="mr-2" />
+              <span className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-medium`}>{exp.city}</span>
+            </div>
+
+            <div className="flex items-center text-base">
+              <Image src={periodIcon} alt="Période" width={20} height={20} className="mr-2" />
+              <span className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} font-medium`}>{exp.period}</span>
+            </div>
+
+            {exp.isButtonVisible && (
+              <button
+                onClick={() => handleViewCertificate(exp.attesPath!, exp.company, exp.isVisible!)}
+                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              >
+                <div className="flex items-center">
+                  <Image src={attestationIcon} alt="Attestation" width={20} height={20} className="mr-2" />
                   {t("view_attestation")}
-                </button>
-              )}
-            </div>
-
-            <div className="flex-1 p-4">
-              <h3 className={`text-3xl font-semibold mb-4 ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.title}</h3>
-              <ul className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} font-semibold leading-relaxed`}>
-                {Object.values(exp.description).map((desc, i) => (
-                  <li key={i} className="mb-3 list-item pl-4">
-                    <span className="inline-block w-4 text-center">•</span> {desc}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap mt-6 ml-auto">
-                <div className="flex flex-wrap mt-6 ml-auto justify-end">
-                  <Image src={developerIcon} alt="Technologie" width={40} height={40} className="mr-4 mb-4" priority />
-                  <Image src={arrowIcon} alt="Technologie" width={30} height={30} className="mr-4 mb-4" priority  />
-                  {exp.technologies.map((tech, i) => (
-                    <div key={i} className="relative group mr-4 mb-4 p-2 border-2 border-gray-300 rounded-md">
-                      <Image src={tech.icon} alt={tech.name} width={40} height={40}  priority />
-                      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-gray-800 text-white text-sm rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        {tech.name}
-                      </span>
-                    </div>
-                  ))}
                 </div>
-              </div>
+              </button>
+            )}
+          </div>
+
+          {/* Right section: title + desc + techs */}
+          <div className="flex-1 flex flex-col gap-6">
+            <h3 className={`text-2xl font-semibold ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.title}</h3>
+
+            <ul className={`text-base leading-relaxed space-y-3 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              {Object.values(exp.description).map((desc, i) => (
+                <li key={i} className="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-lg before:text-blue-500">
+                  {desc}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex items-center flex-wrap gap-4 mt-2">
+              <Image src={developerIcon} alt="Tech Icon" width={40} height={40} priority />
+              <Image src={arrowIcon} alt="Arrow Icon" width={30} height={30} priority />
+              {exp.technologies.map((tech, i) => (
+                <div key={i} className="relative group p-2 border border-gray-300 rounded-md hover:shadow-md">
+                  <Image src={tech.icon} alt={tech.name} width={40} height={40} priority />
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-1 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
             </div>
-          </motion.div>
-        ))}
-      </div>
-
-      {showCertificateViewer && (
-        <ExperienceCertificateViewer
-          t={t}
-          isDarkMode={isDarkMode}
-          certificatePath={certificatePath}
-          companyName={companyName}
-          onClose={closeCertificateViewer}
-        />
-      )}
-        {notification && (
-        <Notification message={notification} type='error' onClose={() => setNotification(null)} />
-      )}
-
+          </div>
+        </motion.div>
+      ))}
     </div>
-  );
+
+    {/* Viewer */}
+    {showCertificateViewer && (
+      <ExperienceCertificateViewer
+        t={t}
+        isDarkMode={isDarkMode}
+        certificatePath={certificatePath}
+        companyName={companyName}
+        onClose={closeCertificateViewer}
+      />
+    )}
+
+    {/* Notification */}
+    {notification && (
+      <Notification message={notification} type='error' onClose={() => setNotification(null)} />
+    )}
+  </div>
+);
+
 };
 
 export default WorkExperience;
