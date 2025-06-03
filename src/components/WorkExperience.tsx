@@ -176,7 +176,7 @@ return (
           variants={cardVariants}
           whileHover={{ scale: 1.02, boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}
         >
-          {/* Left section: logo + info */}
+          {/* Partie gauche (logo, company, ville, période, bouton) */}
           <div className="flex flex-col items-center lg:items-start w-full lg:w-1/3 gap-4">
             <Image src={exp.icon} alt={exp.company} width={130} className="rounded-full shadow-lg border-2 border-gray-300" priority />
             <p className={`text-3xl font-bold ${isDarkMode ? 'text-yellow-400' : 'text-blue-800'}`}>
@@ -206,8 +206,8 @@ return (
             )}
           </div>
 
-          {/* Right section: title + desc + techs */}
-          <div className="flex-1 flex flex-col gap-6">
+          {/* Partie droite (texte) */}
+          <div className="flex-1 flex flex-col gap-6 relative pb-20">
             <h3 className={`text-2xl font-semibold ${isDarkMode ? 'text-blue-300' : 'text-blue-600'}`}>{exp.title}</h3>
 
             <ul className={`text-base leading-relaxed space-y-3 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -217,25 +217,26 @@ return (
                 </li>
               ))}
             </ul>
+          </div>
 
-            <div className="flex items-center flex-wrap gap-4 mt-2">
-              <Image src={developerIcon} alt="Tech Icon" width={40} height={40} priority />
-              <Image src={arrowIcon} alt="Arrow Icon" width={30} height={30} priority />
-              {exp.technologies.map((tech, i) => (
-                <div key={i} className="relative group p-2 border border-gray-300 rounded-md hover:shadow-md">
-                  <Image src={tech.icon} alt={tech.name} width={40} height={40} priority />
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-1 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+          {/* Bloc technologies en bas à droite de toute la carte */}
+          <div className="absolute bottom-4 right-4 flex items-center flex-wrap gap-4 bg-opacity-80 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700">
+            <Image src={developerIcon} alt="Tech Icon" width={40} height={40} priority />
+            <Image src={arrowIcon} alt="Arrow Icon" width={30} height={30} priority />
+            {exp.technologies.map((tech, i) => (
+              <div key={i} className="relative group p-2 border border-gray-300 rounded-md hover:shadow-md dark:border-gray-600">
+                <Image src={tech.icon} alt={tech.name} width={40} height={40} priority />
+                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-1 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                  {/* Compteur + nom */}
+                  {i + 1}. {tech.name}
+                </span>
+              </div>
+            ))}
           </div>
         </motion.div>
       ))}
     </div>
 
-    {/* Viewer */}
     {showCertificateViewer && (
       <ExperienceCertificateViewer
         t={t}
@@ -246,12 +247,12 @@ return (
       />
     )}
 
-    {/* Notification */}
     {notification && (
       <Notification message={notification} type='error' onClose={() => setNotification(null)} />
     )}
   </div>
 );
+
 
 };
 
