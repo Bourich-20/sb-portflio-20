@@ -18,7 +18,6 @@ import nestIcon from '../images/icon/nestJsLogo.png';
 import nextIcon from "../images/icon/nextLogo.png";
 import postgreeIcon from "../images/icon/postGreeSql.png"
 import kafkaIcon from "../images/icon/kafka.png";
-import rabbitMQIcon from "../images/icon/rabbitMQ.png";
 interface Icon {
   src: StaticImageData;
   name: string;
@@ -42,7 +41,6 @@ const icons: Icon[] = [
   {src : nextIcon,name :"Next Js"},
   {src : postgreeIcon,name :"PostgreSQL"},
   {src : kafkaIcon,name :"Kafka"},
-  {src : rabbitMQIcon,name :"RabbitMQ"},
 
 
 ];
@@ -99,8 +97,8 @@ const Technologie: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             <Image
               src={icon.src}
               alt={icon.name}
-              width={48}
-              height={48}
+              width={35}
+              height={35}
               priority 
             />
             <span className="text-sm mt-2">{icon.name}</span>
