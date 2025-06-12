@@ -97,6 +97,7 @@ const WorkExperience: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       description: {
         des1: t("exp2.description.des1"),
         des2: t("exp2.description.des2"),
+        des3: t("exp2.description.des3"),
       },
       technologies: [
         { icon: ionicIcon, name: 'Ionic' },

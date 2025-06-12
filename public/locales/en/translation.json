@@ -50,19 +50,20 @@
     "city": "Agadir",
     "period": "July  1, 2024 - October 1, 2024",
     "description": {
-      "des1": "Worked on backend development using Spring Boot, implementing Spring Security with JWT, Spring Data, and JPA.",
-      "des2": "Utilized Docker and Kubernetes for containerization and deployment.",
-      "des3": "Worked on microservices architecture with Spring Boot and NestJS."
+      "des1": "Developed a vehicle inventory management application, including tracking, invoicing, and payment functionalities.",
+      "des2": "Implemented a microservices architecture to ensure modularity and scalability of the solution.",
+      "des3": "Used technologies such as Spring Boot, NestJS, Spring Security (JWT), Spring Data JPA, Docker, and Kubernetes."
     }
   },
   "exp2": {
     "title": "Internship: Full Stack Developer",
-    "company": "Diamatech",
+    "company": "Diamantech",
     "city": "Casablanca",
     "period": "July 17, 2023 - September 3, 2023",
     "description": {
-      "des1": "Developed a task management mobile app using Ionic, Angular, and Node.js.",
-      "des2": "Contributed to innovation within the company by delivering a full-stack solution."
+      "des1": "Developed a full-stack mobile task management application.",
+      "des2": "Implemented a task tracking system for employees.",
+      "des3": "Technologies used: Ionic, Angular, Node.js."
     }
   },
   "exp3": {
@@ -93,9 +94,9 @@
   "city": "Casablanca",
   "period": "February 1, 2025 - July 1, 2025",
   "description": {
-    "des1": "Designed and implemented a parametric ISO 8583 simulator to assess the performance of PowerCARD interfaces (e.g., FNB Base24), supporting multi-institution and multi-user scenarios.",
-    "des2": "Adopted a microservices architecture to modularize the simulator components, enabling independent deployment and scalability.",
-    "des3": "Integrated Kafka for asynchronous event-driven communication and gRPC for low-latency data synchronization between services, significantly accelerating database updates and real-time interactions."
+    "des1": "Full-stack development of an online ISO 8583 parametric simulator designed for testers and analysts at HPS.",
+    "des2": "Designed a microservices architecture ensuring performance, scalability, and independent component deployment.",
+    "des3": "Enabled multi-institution and multi-user support, using Spring Boot and Kafka for efficient asynchronous communication."
   }
   },
    "exp_title" :"Work Experience",

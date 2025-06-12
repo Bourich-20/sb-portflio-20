@@ -49,19 +49,20 @@
     "city": "Agadir",
     "period": "1 juillet  2024 - 1 octobre 2024",
     "description": {
-      "des1": "Travail sur le développement backend en utilisant Spring Boot, mise en œuvre de Spring Security avec JWT, Spring Data et JPA.",
-      "des2": "Utilisation de Docker et Kubernetes pour la conteneurisation et le déploiement.",
-      "des3": "Travail sur une architecture microservices avec Spring Boot et NestJS."
+      "des1": "Développement d'une application de gestion de véhicules en stock, couvrant le suivi, la facturation et le paiement.",
+      "des2": "Mise en place d’une architecture microservices pour garantir la modularité et l’évolutivité de la solution.",
+      "des3": "Utilisation de technologies comme Spring Boot, NestJS, Spring Security (JWT), Spring Data JPA, Docker et Kubernetes."
     }
   },
   "exp2": {
     "title": "Stage : Développeur Full Stack",
-    "company": "Diamatech",
+    "company": "Diamantech",
     "city": "Casablanca",
     "period": "17 juillet 2023 - 3 septembre 2023",
     "description": {
-      "des1": "Développé une application mobile de gestion de tâches avec Ionic, Angular et Node.js.",
-      "des2": "Contribué à l'innovation au sein de l'entreprise en livrant une solution full-stack."
+      "des1": "Développement d’une application mobile de gestion des tâches en full stack.",
+      "des2": "Mise en place d’un système de suivi des tâches pour les employés.",
+      "des3": "Technologies utilisées : Ionic, Angular, Node.js."
     }
   },
   "exp3": {
@@ -92,10 +93,11 @@
   "city": "Casablanca",
   "period": "1 février 2025 - 1 juillet 2025",
   "description": {
-    "des1": "Conception et développement d’un simulateur paramétrique ISO 8583 pour évaluer les performances des interfaces PowerCARD (ex : FNB Base24), avec support multi-institution et multi-utilisateur.",
-    "des2": "Mise en place d’une architecture microservices pour modulariser les composants du simulateur, facilitant le déploiement indépendant et la montée en charge.",
-    "des3": "Utilisation de Kafka pour la communication événementielle asynchrone et de gRPC pour la synchronisation rapide des données entre les services, ce qui a permis d’accélérer significativement les mises à jour de la base de données en temps réel."
+    "des1": "Développement full-stack d’un simulateur paramétrique en ligne ISO 8583 destiné aux testeurs et analystes de HPS.",
+    "des2": "Conception d’une architecture microservices assurant performance, scalabilité, et déploiement indépendant des composants.",
+    "des3": "Support multi-institution et multi-utilisateur, avec utilisation de Spring Boot et Kafka pour une communication asynchrone efficace."
   }
+
 },
  "exp_title" :"Expérience Professionnelle",
 "tech_use" : "Technologies Utilisées",
