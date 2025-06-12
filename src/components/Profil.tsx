@@ -83,7 +83,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     ${isDarkMode 
       ? 'bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] text-white' 
       : 'bg-gradient-to-br from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1] text-gray-900'} 
-    max-h-[480px] overflow-hidden rounded-2xl shadow-xl border border-gray-300 p-6 transition-all duration-300 hover:scale-105`}
+    max-h-full sm:max-h-[480px] overflow-hidden rounded-2xl shadow-xl border border-gray-300 p-6 transition-all duration-300 hover:scale-105`}
 >
   <Image
     src={bourihImage}
@@ -125,7 +125,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 </motion.div>
 
 
-<div className={`carousel-section flex-1 w-full lg:w-auto ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} max-h-[600px] overflow-hidden`}> {/* Augmenter la hauteur du carrousel */} 
+<div className={`carousel-section flex-1 w-full lg:w-auto ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} max-h-full sm:max-h-[600px] overflow-hidden`}> {/* Augmenter la hauteur du carrousel */} 
     <div className="content relative h-full">
         <Slider {...settings}>
             <div className="w-[400px] h-[450px]">  {/* Augmenter la taille des slides */} 

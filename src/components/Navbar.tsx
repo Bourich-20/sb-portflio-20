@@ -60,100 +60,100 @@ export default function Navbar({ toggleDarkMode, isDarkMode }: NavbarProps) {
     };
   }, []);
 
-  return (
-    <nav className={`p-3 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
-  <div className="container mx-auto flex items-center justify-between">
-    <Link href="/#profil" className="flex items-center space-x-2 text-white">
-      <Image src={logo} alt="Logo" className="w-16 h-10" priority />
-      <span className="text-xl font-bold">SOUFIANE BOURICH</span>
-    </Link>
+ return (
+  <nav className={`p-3 fixed top-0 w-full z-50 shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-gradient-to-r from-blue-400 to-purple-600'}`}>
+    <div className="container mx-auto flex items-center justify-between">
+      <Link href="/#profil" className="flex items-center space-x-2 text-white">
+        <Image src={logo} alt="Logo" className="w-16 h-10" priority />
+        <span className="text-xl font-bold">SOUFIANE BOURICH</span>
+      </Link>
 
-    <div className="lg:hidden flex items-center">
-      <button 
-        className="text-white focus:outline-none"
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        <svg 
-          className="w-6 h-6" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24" 
-          xmlns="http://www.w3.org/2000/svg"
+      <div className="lg:hidden flex items-center">
+        <button
+          className="text-white focus:outline-none"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
-          {isMenuOpen ? (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
-    </div>
-
-    <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'absolute top-16 left-0 right-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5' : 'hidden'}`}>
-      <ul className="flex flex-col lg:flex-row lg:space-x-4">
-        {['profil', 'technologies', 'projects', 'education', 'Experience', 'contact'].map((item) => (
-          <li className="mb-2 lg:mb-0 lg:mr-4 relative group" key={item}>
-            <Link
-              className={`block px-4 py-2 text-white text-base font-medium transition-all duration-300 ${activeLink === item ? 'underline-active' : 'group-hover:text-white'}`}
-              href={`/#${item}`}
-              onClick={() => handleClick(item)}
-            >
-              {t(item)}
-              <span className={`absolute left-0 bottom-0 h-1 w-full transform scale-x-0 ${isDarkMode ? 'bg-gradient-to-r from-blue-400 to-pink-500' : 'bg-orange-400'} transition-transform duration-500 ease-in-out group-hover:scale-x-100 ${activeLink === item ? 'scale-x-100' : ''}`}></span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <div className="relative flex items-center" ref={langMenuRef}>
-        <button 
-          className="bg-none flex items-center text-white focus:outline-none" 
-          onClick={toggleLangMenu}
-          aria-label="Change Language"
-        >
-          {selectedLang === 'fr' ? (
-            <Image src={iconFrance} alt="Drapeau français" className="w-6 h-6" priority />
-          ) : (
-            <Image src={iconEn} alt="Drapeau anglais" className="w-6 h-6" priority />
-          )}
-          <FaCaretDown className="ml-1 w-4 h-4 text-white" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {isMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
         </button>
+      </div>
 
-        {isLangMenuOpen && (
-          <div className={`absolute left-0 top-full mt-0 rounded-md shadow-lg z-10 w-48 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-            <h4 className={`capitalize font-medium text-sm px-6 py-1 text-start ${isDarkMode ? 'text-white' : 'text-app-blue'}`}>{t('language')}</h4>
-            <button 
-              className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'fr' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
-              onClick={() => changeLanguage('fr')}
-            >
-              <Image src={iconFrance} alt="Drapeau français" className="w-5 h-5" priority /> {t('french')}
-            </button>
-            <button 
-              className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'en' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
-              onClick={() => changeLanguage('en')}
-            >
-              <Image src={iconEn} alt="Drapeau anglais" className="w-5 h-5" priority /> {t('english')}
-            </button>
-          </div>
-        )}
+      <div className={`lg:flex lg:items-center lg:space-x-4 ${isMenuOpen ? 'absolute top-16 right-0 left-0 bg-gradient-to-r from-blue-400 to-purple-600 p-5 flex flex-col items-end space-y-4' : 'hidden lg:flex'}`}>
+        <ul className="flex flex-col lg:flex-row lg:space-x-4 items-end">
+          {['profil', 'technologies', 'projects', 'education', 'Experience', 'contact'].map((item) => (
+            <li className="mb-2 lg:mb-0 lg:mr-4 relative group" key={item}>
+              <Link
+                className={`block px-4 py-2 text-white text-base font-medium transition-all duration-300 ${activeLink === item ? 'underline-active' : 'group-hover:text-white'}`}
+                href={`/#${item}`}
+                onClick={() => handleClick(item)}
+              >
+                {t(item)}
+                <span className={`absolute left-0 bottom-0 h-1 w-full transform scale-x-0 ${isDarkMode ? 'bg-gradient-to-r from-blue-400 to-pink-500' : 'bg-orange-400'} transition-transform duration-500 ease-in-out group-hover:scale-x-100 ${activeLink === item ? 'scale-x-100' : ''}`}></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="relative flex items-center" ref={langMenuRef}>
+          <button
+            className="bg-none flex items-center text-white focus:outline-none"
+            onClick={toggleLangMenu}
+            aria-label="Change Language"
+          >
+            {selectedLang === 'fr' ? (
+              <Image src={iconFrance} alt="Drapeau français" className="w-6 h-6" priority />
+            ) : (
+              <Image src={iconEn} alt="Drapeau anglais" className="w-6 h-6" priority />
+            )}
+            <FaCaretDown className="ml-1 w-4 h-4 text-white" />
+          </button>
+
+          {isLangMenuOpen && (
+            <div className={`absolute right-0 top-full mt-0 rounded-md shadow-lg z-10 w-48 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+              <h4 className={`capitalize font-medium text-sm px-6 py-1 text-start ${isDarkMode ? 'text-white' : 'text-app-blue'}`}>{t('language')}</h4>
+              <button
+                className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'fr' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
+                onClick={() => changeLanguage('fr')}
+              >
+                <Image src={iconFrance} alt="Drapeau français" className="w-5 h-5" priority /> {t('french')}
+              </button>
+              <button
+                className={`flex items-center gap-4 font-medium text-sm px-6 rounded-sm py-1 w-full hover:bg-app-teal ${selectedLang === 'en' ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}`}
+                onClick={() => changeLanguage('en')}
+              >
+                <Image src={iconEn} alt="Drapeau anglais" className="w-5 h-5" priority /> {t('english')}
+              </button>
+            </div>
+          )}
+        </div>
+
+        <button
+          className="text-white"
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+        >
+          {isDarkMode ? (
+            <MoonIcon className="w-6 h-6" />
+          ) : (
+            <SunIcon className="w-6 h-6" />
+          )}
+        </button>
       </div>
     </div>
+  </nav>
+);
 
-    <button 
-      className="text-white ml-4 lg:ml-0"
-      onClick={toggleDarkMode}
-      aria-label="Toggle dark mode"
-    >
-      {isDarkMode ? (
-        <MoonIcon className="w-6 h-6" />
-      ) : (
-        <SunIcon className="w-6 h-6" />
-      )}
-    </button>
-  </div>
-</nav>
-
-  );
   
 }

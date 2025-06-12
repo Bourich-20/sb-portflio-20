@@ -6,6 +6,9 @@ import todolist from '../images/todolist.jpg';
 import emg1 from '../images/emg.jpg';
 import emg2 from '../images/emg2.jpg';
 import emg3 from '../images/emg3.jpg';
+import emg4 from '../images/emg4.jpg';
+import emg5 from '../images/emg5.jpg';
+import emg6 from '../images/emg6.jpg';
 import flutterIcon from "../images/icon/icons8-flutter-48.png";
 import nodeJsIcon from '../images/icon/nodeJs.png';
 import camion1 from '../images/camion1.jpg'
@@ -78,7 +81,7 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     ],
     freelance: [
       {
-        imageSrc: [emg1, emg2, emg3],
+        imageSrc: [emg1, emg2, emg3,emg4 ,emg5 ,emg6],
         projectName: t('projectName3'),
         periodMonths: 1,
         cardType: 'mobile' as CardType,
@@ -231,7 +234,6 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         animate="visible"
         variants={cardContainerVariants}
       >
-        <div className="relative mb-8 p-4 border-4 rounded-lg shadow-lg">
   <div className="absolute inset-0 rounded-lg border-2 opacity-50 animate-pulse bg-purple-200"></div>
   <div className="relative z-10">
     <h2 className="text-2xl font-bold mb-4">
@@ -258,7 +260,6 @@ const ProjectList: React.FC <{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       ))}
     </div>
   </div>
-</div>
 
       </motion.div>
   

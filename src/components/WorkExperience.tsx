@@ -220,19 +220,22 @@ return (
           </div>
 
           {/* Bloc technologies en bas à droite de toute la carte */}
-          <div className="absolute bottom-4 right-4 flex items-center flex-wrap gap-4 bg-opacity-80 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700">
-            <Image src={developerIcon} alt="Tech Icon" width={40} height={40} priority />
-            <Image src={arrowIcon} alt="Arrow Icon" width={30} height={30} priority />
-            {exp.technologies.map((tech, i) => (
-              <div key={i} className="relative group p-2 border border-gray-300 rounded-md hover:shadow-md dark:border-gray-600">
-                <Image src={tech.icon} alt={tech.name} width={40} height={40} priority />
-                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full mt-1 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                  {/* Compteur + nom */}
-                  {i + 1}. {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
+ <div className="flex flex-wrap items-center justify-center lg:justify-end gap-4 mt-6 lg:mt-0 
+                bg-opacity-80 bg-white dark:bg-gray-900 p-3 rounded-lg shadow-lg 
+                border border-gray-300 dark:border-gray-700 
+                w-full lg:w-auto lg:absolute lg:bottom-4 lg:right-4">
+  <Image src={developerIcon} alt="Tech Icon" width={40} height={40} priority />
+  <Image src={arrowIcon} alt="Arrow Icon" width={30} height={30} priority />
+  {exp.technologies.map((tech, i) => (
+    <div key={i} className="relative group p-2 border border-gray-300 rounded-md hover:shadow-md dark:border-gray-600">
+      <Image src={tech.icon} alt={tech.name} width={40} height={40} priority />
+      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-xs bg-black text-white px-1 rounded opacity-0 group-hover:opacity-100 transition">
+        {tech.name}
+      </span>
+    </div>
+  ))}
+</div>
+
         </motion.div>
       ))}
     </div>
