@@ -34,6 +34,8 @@ import cassandraIcon  from "../images/icon/cassandra.png"
 import redisIcon from "../images/icon/redis.png"
 import fireBaseIcon from "../images/icon/fireBase.png"
 import pythonIcon from "../images/icon/python.png"
+import kafkaIcon from "../images/icon/kafka.png";
+import rabbitMQIcon from "../images/icon/rabbitMQ.png";
 import { useTranslation } from 'react-i18next';
 const frontendTechs = [
   { name: 'Angular', icon: angularIcon },
@@ -55,7 +57,9 @@ const backendTechs = [
   { name: 'PHP', icon: phpIcon },
   { name: 'Laravel', icon: laravelIcon },
   { name: 'Java', icon: javaIcon },
-  {name :" Python" ,icon : pythonIcon}
+  {name :" Python" ,icon : pythonIcon},
+  {name :" Kafka" ,icon : kafkaIcon},
+  {name :" RabbitMQ" ,icon : rabbitMQIcon}
 
 ];
 
@@ -122,22 +126,32 @@ const TechnologiesDisplay: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) 
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3  gap-6">
               {techs.map((tech) => (
-                <motion.div
-                  key={tech.name}
-                  className={`relative flex flex-col items-center justify-center p-4 my-4 rounded-lg shadow-lg transition-transform duration-300 ${
-                    isDarkMode ? "bg-gray-800" : "bg-blue-100"
-                  }`}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <Image src={tech.icon} alt={tech.name} width={48} height={48} priority />
-                  <span
-                    className={`mt-4 text-lg font-semibold ${
-                      isDarkMode ? "text-blue-300" : "text-blue-600"
-                    }`}
-                  >
-                    {tech.name}
-                  </span>
-                </motion.div>
+          <motion.div
+            key={tech.name}
+            className={`relative flex flex-col items-center justify-center p-4 my-4 rounded-lg shadow-lg transition-transform duration-300 ${
+              isDarkMode ? "bg-gray-800" : "bg-blue-100"
+            }`}
+            whileHover={{ scale: 1.1 }}
+          >
+            <div className="w-16 h-16 flex items-center justify-center">
+              <Image
+                src={tech.icon}
+                alt={tech.name}
+                width={48}
+                height={48}
+                className="object-contain w-full h-full"
+                priority
+              />
+            </div>
+            <span
+              className={`mt-4 text-lg font-semibold ${
+                isDarkMode ? "text-blue-300" : "text-blue-600"
+              }`}
+            >
+              {tech.name}
+            </span>
+          </motion.div>
+
               ))}
             </div>
           </div>
