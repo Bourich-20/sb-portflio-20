@@ -99,7 +99,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   </div>
 
   <div className="text-center mt-1 px-4">
-    <p className="text-sm leading-relaxed font-medium font-sans text-gray-800 dark:text-gray-300">
+    <p className={`text-sm leading-relaxed font-medium font-sans  ${isDarkMode ? ' text-white' : ' text-gray-800'} dark:text-gray-300`}>
       {t('short_description')}
     </p>
   </div>
@@ -125,10 +125,10 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 </motion.div>
 
 
-<div className={`carousel-section flex-1 w-full lg:w-auto ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} max-h-full sm:max-h-[600px] overflow-hidden`}> {/* Augmenter la hauteur du carrousel */} 
+<div className={`carousel-section flex-1 w-full lg:w-auto ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} max-h-full sm:max-h-[600px] overflow-hidden`}>
     <div className="content relative h-full">
         <Slider {...settings}>
-            <div className="w-[400px] h-[450px]">  {/* Augmenter la taille des slides */} 
+            <div className="w-[400px] h-[450px]">  
                 <Image
                     src={img2}
                     alt="Slide 1"
@@ -138,7 +138,7 @@ const Profil: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     priority 
                 />
             </div>
-            <div className="w-[400px] h-[450px]">  {/* Augmenter la taille des slides */} 
+            <div className="w-[400px] h-[450px]">  
                 <Image
                     src={img3}
                     alt="Slide 2"
